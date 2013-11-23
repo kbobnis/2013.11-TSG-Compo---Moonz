@@ -2,8 +2,6 @@
 using System.Collections;
 
 public class Player : MonoBehaviour {
-
-
     public string inputSuffix;
 
     protected SC sc;
@@ -13,8 +11,9 @@ public class Player : MonoBehaviour {
     void Start () {
         sc = GetComponent<SC>();
         critter = GetComponent<Critter>();
+        gameObject.SetActive(true);
     }
-    
+
     // Update is called once per frame
     void Update () {
         if (sc && critter) {
