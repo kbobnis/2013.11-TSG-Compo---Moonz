@@ -69,11 +69,11 @@ InputManager:
     axis: 3
     joyNum: 1
   - serializedVersion: 3
-    m_Name: Fire3
+    m_Name: PickItem
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
-    positiveButton: left cmd
+    positiveButton: joystick 1 button 13
     altNegativeButton: 
     altPositiveButton: mouse 2
     gravity: 1000
