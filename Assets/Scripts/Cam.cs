@@ -21,7 +21,7 @@ public class Cam : MonoBehaviour {
         up = up.normalized;
         mean /= players.Length;
         mean = mean.normalized;
-        Camera.main.transform.localPosition = mean * World.radius * 2;
+        Camera.main.transform.localPosition = mean * World.radius * 3;
         Camera.main.transform.LookAt(mean, up);
     }
 }

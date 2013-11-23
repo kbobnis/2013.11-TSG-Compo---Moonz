@@ -13,7 +13,7 @@ public class SP : MonoBehaviour {
     // Update is called once per frame
     void Update () {
         if (sc != null) {
-            transform.localPosition = sc.position * World.radius;
+            transform.localPosition = sc.position * (World.radius + sc.height);
             transform.localRotation = Quaternion.LookRotation(sc.direction, sc.position);
         }
     }
