@@ -41,31 +41,34 @@ public class Gui : MonoBehaviour {
 		string slotName = "slot";
 
 		Eq eq = GetComponent<Eq>();
-
 		//up slot
 		GUI.DrawTexture(new Rect(offset + x1 + textureWidth + rectW, y1, rectW, rectW), Resources.Load(slotName, typeof(Texture))as Texture);
-		Item upHandItem = eq.upSlot;
-		if (upHandItem != null) {
+		GameObject upSlot = eq.upSlot;
+		if (upSlot != null) {
+			Item upHandItem = upSlot.GetComponent<Item>();
 			GUI.DrawTexture(new Rect(offset + x1 + textureWidth + rectW, y1, rectW, rectW), upHandItem.texture);
 		}
 
 		// left slot
 		GUI.DrawTexture(new Rect(offset + x1 + textureWidth, y1 + rectW , rectW, rectW), Resources.Load(slotName, typeof(Texture))as Texture);
-		Item leftItem = eq.leftSlot;
-		if (leftItem != null) {
+		GameObject leftSlot = eq.leftSlot;
+		if (leftSlot != null) {
+			Item leftItem = leftSlot.GetComponent<Item>();
 			GUI.DrawTexture(new Rect(offset + x1 + textureWidth + rectW, y1, rectW, rectW), leftItem.texture);
 		}
 
 		//right slot
 		GUI.DrawTexture(new Rect(offset + x1 + textureWidth + 2 * rectW, y1 + rectW , rectW, rectW), Resources.Load(slotName, typeof(Texture))as Texture);
-		Item rightItem = eq.rightSlot;
-		if (rightItem != null) {
+
+		GameObject rightSlot = eq.rightSlot;
+		if (rightSlot != null) {
+			Item rightItem = rightSlot.GetComponent<Item>();
 			GUI.DrawTexture(new Rect(offset + x1 + textureWidth + 2 * rectW, y1 + rectW , rectW, rectW), rightItem.texture);
 		}
 
 		//down slot
 		GUI.DrawTexture(new Rect(offset + x1 + textureWidth + rectW, y1 + 2 * rectW , rectW, rectW), Resources.Load(slotName, typeof(Texture))as Texture);
-		Item downItem = eq.downSlot;
+		Item downItem = eq.downSlot.GetComponent<Item>();
 		if (downItem != null){
 			GUI.DrawTexture(new Rect(offset + x1 + textureWidth + rectW, y1 + 2 * rectW , rectW, rectW), downItem.texture);
 		}
