@@ -15,12 +15,13 @@ public class Critter : MonoBehaviour {
     void Update () {
     }
 
-	public void takeDamage(float dmg)
+	public float TakeDamage(float dmg)
 	{
-		this.hp -= dmg;
-		if (this.hp <= 0) {
-			this.gameObject.SendMessage("LetMeDie");
+        float overkill = dmg - hp;
+		hp -= dmg;
+		if (hp <= 0) {
+			gameObject.SendMessage("LetMeDie");
 		}
-
+        return overkill;
 	}
 }

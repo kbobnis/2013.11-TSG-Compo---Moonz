@@ -4,7 +4,7 @@ using System.Collections;
 public class Dropper : MonoBehaviour {
 
     public float dropChance;
-    public string[] dropsPrefabs;
+    public GameObject[] dropsPrefabs;
     public float[] dropWeights;
 
     float weightsSum;
@@ -27,7 +27,7 @@ public class Dropper : MonoBehaviour {
                 if (pick > dropWeights[i]) {
                     pick -= dropWeights[i];
                 } else {
-                    GameObject drop = Instantiate(Resources.Load(dropsPrefabs[i])) as GameObject;
+                    GameObject drop = Instantiate(dropsPrefabs[i]) as GameObject;
                     drop.GetComponent<SC>().SetPosition(GetComponent<SC>().position);
                     World.AddDrop(drop);
                     break;

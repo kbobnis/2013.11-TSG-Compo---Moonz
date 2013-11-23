@@ -8,12 +8,6 @@ public class Missiler : MonoBehaviour {
     }
 
     void Update () {
-        CheckHits();
-    }
-
-    void CheckHits() {
-        for (int i=World.missiles.Count-1; i>=0; --i) {
-        }
     }
 
     public static void FireMissile(string prefab, GameObject from, Vector3 to) {

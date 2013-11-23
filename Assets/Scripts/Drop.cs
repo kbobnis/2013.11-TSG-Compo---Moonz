@@ -3,6 +3,8 @@ using System.Collections;
 
 public class Drop : MonoBehaviour {
 
+    public GameObject itemPrefab;
+
     void Start () {
     }
     

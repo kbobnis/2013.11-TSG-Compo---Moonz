@@ -22,6 +22,8 @@ public class Item : MonoBehaviour {
 	public float shieldRestoreTime;
 	public float speedChange;
 
+    public GameObject missilePrefab;
+
     void Start () {
     
     }

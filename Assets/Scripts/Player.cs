@@ -7,11 +7,13 @@ public class Player : MonoBehaviour {
     protected SC sc;
     protected SP sp;
     protected Critter critter;
+    protected Eq eq;
 
     // Use this for initialization
     void Start () {
         sc = GetComponent<SC>();
         sp = GetComponent<SP>();
+        eq = GetComponent<Eq>();
         critter = GetComponent<Critter>();
     }
 
@@ -47,11 +49,11 @@ public class Player : MonoBehaviour {
     void PickDropIfAny() {
         GameObject dropObj = World.GetNearestDrop(sc);
         if (dropObj != null && sc.IsColliding(dropObj)) {
-            dropObj.GetComponent<Drop>().TriggerTakeEffect();
-            Item item = dropObj.GetComponent<Item>();
-            if (item != null) {
-                SendMessage("AddItemToEq", item);
+            Drop drop = dropObj.GetComponent<Drop>();
+            if (drop.itemPrefab != null) {
+                SendMessage("AddItemToEq", drop.itemPrefab.GetComponent<Item>());
             }
+            drop.TriggerTakeEffect();
             World.RemoveDrop(dropObj);
         }
     }

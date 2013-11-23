@@ -107,6 +107,11 @@ public class World : MonoBehaviour {
         missiles.Add(m);
     }
 
+    public static void RemoveMissile(GameObject m) {
+        Destroy(m);
+        missiles.Remove(m);
+    }
+
 	public static void RemoveEnemy(GameObject e) {
         Destroy(e);
         enemies.Remove(e);
