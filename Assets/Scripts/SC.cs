@@ -1,10 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+// Sphere coordinator
 public class SC : MonoBehaviour {
 
     public Vector3 position;
     public Vector3 direction;
+    public float height;
 
     void Awake() {
         position = new Vector3(0,0,1);
@@ -56,8 +58,8 @@ public class SC : MonoBehaviour {
     public Vector3 GetSide() {
         return Vector3.Cross(position, direction);
     }
-	
-	void Update () {
-	
-	}
+    
+    void Update () {
+    
+    }
 }
