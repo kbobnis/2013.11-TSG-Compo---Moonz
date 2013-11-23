@@ -3,7 +3,6 @@ using System.Collections;
 
 public class Player : MonoBehaviour {
 
-
     public string inputSuffix;
 
     protected SC sc;

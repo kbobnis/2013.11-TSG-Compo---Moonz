@@ -5,6 +5,7 @@ public class Critter : MonoBehaviour {
     public float speed;
     public float power;
     public float hp;
+	public float maxHp;
 
     void Start () {
     }
@@ -21,4 +22,5 @@ public class Critter : MonoBehaviour {
 		}
 
 	}
+
 }
