@@ -5,10 +5,10 @@ public class Item : MonoBehaviour {
 	public string _name;
 	public Texture texture;
 
-	const string SLOT_UP = "up";
-	const string SLOT_DOWN = "down";
-	const string SLOT_LEFT = "left";
-	const string SLOT_RIGHT = "right";
+	public const string SLOT_UP = "up";
+	public const string SLOT_DOWN = "down";
+	public const string SLOT_LEFT = "left";
+	public const string SLOT_RIGHT = "right";
 
 	public string slotName;
 

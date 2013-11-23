@@ -747,11 +747,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469d38b6a23072648adbefc2d2502d4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  up_slot:
-  - sword
-  left_slot: []
-  right_slot: []
-  down_slot: []
+  upSlot: {fileID: 100000, guid: 7c13dc27fdea82e41a611200ed58e59b, type: 2}
+  leftSlot: {fileID: 0}
+  rightSlot: {fileID: 0}
+  downSlot: {fileID: 0}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
