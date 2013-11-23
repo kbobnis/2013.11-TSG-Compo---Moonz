@@ -34,7 +34,6 @@ public class Player : MonoBehaviour {
             float fh = Input.GetAxis("FH"+inputSuffix);
             float fv = Input.GetAxis("FV"+inputSuffix);
 
-
             if (Mathf.Abs(fh) + Mathf.Abs(fv) > 0.5) {
                 Vector3 shootDirection = Camera.main.transform.up * fv + Camera.main.transform.right * fh;
                 critter.Attack(sc.position + shootDirection);

@@ -5,6 +5,8 @@ public class Eq : MonoBehaviour
 {
 	public ArrayList backpack = new ArrayList();
 
+	public GameObject[] backpackFromGui;
+
 	public GameObject upSlot;
 	public GameObject leftSlot;
 	public GameObject rightSlot;
@@ -13,7 +15,9 @@ public class Eq : MonoBehaviour
 
 	// Use this for initialization
 	void Start () {
-	
+		foreach(var gameObject in backpackFromGui){
+			backpack.Add(gameObject);
+		}
 	}
 	
 	// Update is called once per frame
