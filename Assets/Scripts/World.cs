@@ -62,10 +62,7 @@ public class World : MonoBehaviour {
     }
 
     public static void AddEnemy(GameObject e) {
-		lock(enemies)
-		{
-        	enemies.Add(e);
-		}
+		enemies.Add(e);
     }
 
     public static GameObject GetNearestEnemy(SC sc) {
@@ -77,10 +74,7 @@ public class World : MonoBehaviour {
     }
 
 	public static void RemoveEnemy(GameObject e) {
-		lock(enemies)
-		{
 			Destroy(e);
 			enemies.Remove(e);
-		}
 	}
 }

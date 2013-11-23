@@ -16,8 +16,6 @@ public class Missile : MonoBehaviour {
     void Update () {
         sc.MoveForward(mp.speed);
 
-		lock(World.enemies)
-		{
 			foreach(var tmp in World.enemies.ToArray())
 			{
 				GameObject enemy = tmp as GameObject;
@@ -26,7 +24,6 @@ public class Missile : MonoBehaviour {
 					enemy.GetComponent<Critter>().takeDamage(mp.dmg);
 				}
 			}
-		}
 
         life -= Time.deltaTime;
         if (life < 0) {
