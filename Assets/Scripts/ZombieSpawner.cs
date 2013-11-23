@@ -13,16 +13,14 @@ public class ZombieSpawner : MonoBehaviour {
     float lastSpawnTime;
     ArrayList enemiesPrefabs;
 
-	// Use this for initialization
-	void Start () {
+    void Start () {
         totalEnemiesPower = 0;
         lastSpawnTime = 0;
         enemiesPrefabs = new ArrayList();
         enemiesPrefabs.Add(Resources.Load("Zombie1", typeof(GameObject)) as GameObject);
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+    
+    void Update () {
         maxTotalEnemiesPower += totalEnemiesPowerGain * Time.deltaTime;
         enemyPowerGain += enemyPowerGain * Time.deltaTime;
 
@@ -42,7 +40,7 @@ public class ZombieSpawner : MonoBehaviour {
         }
 
         SpreadEvilGuys();
-	}
+    }
 
 
     void SpreadEvilGuys() {
