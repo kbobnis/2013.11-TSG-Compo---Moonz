@@ -1,0 +1,179 @@
+fileFormatVersion: 2
+guid: 65d88cf204e764ff5a71f7bd600c4062
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: tankhead
+    100004: tankLArm1
+    100006: tankLArm2
+    100008: tankLArmCollarbone
+    100010: tankLArmf1
+    100012: tankLArmf1 1
+    100014: tankLArmPalm
+    100016: tankLCalf
+    100018: tankLFoot
+    100020: tankLThigh
+    100022: tankPelvis
+    100024: tankRArm1
+    100026: tankRArm2
+    100028: tankRArmCollarbone
+    100030: tankRArmf1
+    100032: tankRArmf1 1
+    100034: tankRArmPalm
+    100036: tankRCalf
+    100038: tankRFoot
+    100040: tankRibcage001
+    100042: tankRThigh
+    100044: tankSpine
+    400000: //RootNode
+    400002: tankhead
+    400004: tankLArm1
+    400006: tankLArm2
+    400008: tankLArmCollarbone
+    400010: tankLArmf1
+    400012: tankLArmf1 1
+    400014: tankLArmPalm
+    400016: tankLCalf
+    400018: tankLFoot
+    400020: tankLThigh
+    400022: tankPelvis
+    400024: tankRArm1
+    400026: tankRArm2
+    400028: tankRArmCollarbone
+    400030: tankRArmf1
+    400032: tankRArmf1 1
+    400034: tankRArmPalm
+    400036: tankRCalf
+    400038: tankRFoot
+    400040: tankRibcage001
+    400042: tankRThigh
+    400044: tankSpine
+    7400000: run no gun
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: run no gun
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 12
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: tankPelvis
+        weight: 1
+      - path: tankPelvis/tankLThigh
+        weight: 1
+      - path: tankPelvis/tankLThigh/tankLCalf
+        weight: 1
+      - path: tankPelvis/tankLThigh/tankLCalf/tankLFoot
+        weight: 1
+      - path: tankPelvis/tankRThigh
+        weight: 1
+      - path: tankPelvis/tankRThigh/tankRCalf
+        weight: 1
+      - path: tankPelvis/tankRThigh/tankRCalf/tankRFoot
+        weight: 1
+      - path: tankPelvis/tankSpine
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankhead
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankLArmCollarbone
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankLArmCollarbone/tankLArm1
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankLArmCollarbone/tankLArm1/tankLArm2
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankLArmCollarbone/tankLArm1/tankLArm2/tankLArmPalm
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankLArmCollarbone/tankLArm1/tankLArm2/tankLArmPalm/tankLArmf1
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankLArmCollarbone/tankLArm1/tankLArm2/tankLArmPalm/tankLArmf1
+          1
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankRArmCollarbone
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankRArmCollarbone/tankRArm1
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankRArmCollarbone/tankRArm1/tankRArm2
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankRArmCollarbone/tankRArm1/tankRArm2/tankRArmPalm
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankRArmCollarbone/tankRArm1/tankRArm2/tankRArmPalm/tankRArmf1
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankRArmCollarbone/tankRArm1/tankRArm2/tankRArmPalm/tankRArmf1
+          1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00499999989
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  userData: 

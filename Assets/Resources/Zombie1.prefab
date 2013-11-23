@@ -112,9 +112,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c38007aa93043bd8282cbcb5f3109e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: .00300000003
+  speed: .180000007
   power: 1
   hp: 0
+  armorValue: 0
+  shield: 0
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
