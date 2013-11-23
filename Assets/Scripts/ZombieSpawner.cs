@@ -45,8 +45,6 @@ public class ZombieSpawner : MonoBehaviour {
 
     void SpreadEvilGuys() {
 
-		lock(World.enemies)
-		{
         for (int i=0; i<World.enemies.Count; ++i) {
             SC sc=World.enemies[i].GetComponent<SC>();
             GameObject nearest = World.GetNearestEnemy(sc);
@@ -61,7 +59,6 @@ public class ZombieSpawner : MonoBehaviour {
                     otherSc.Correct();
                 }
             }
-        }
 		}
     }
 
