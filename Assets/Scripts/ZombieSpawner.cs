@@ -51,10 +51,11 @@ public class ZombieSpawner : MonoBehaviour {
             SC otherSc = World.GetNearestEnemy(sc).GetComponent<SC>();
             float distance = Vector3.Distance(sc.position, otherSc.position) - sc.radius - otherSc.radius;
             if (distance < 0) {
-                sc.SetDirectionTo(otherSc.position);
-                otherSc.SetDirectionTo(sc.position);
-                sc.MoveForward(distance*0.5f);
-                otherSc.MoveForward(distance*0.5f);
+                Vector3 direction = 0.125f * (otherSc.position - sc.position);
+                sc.position -= direction;
+                otherSc.position += direction;
+                sc.Correct();
+                otherSc.Correct();
             }
         }
     }

@@ -38,7 +38,7 @@ public class SC : MonoBehaviour {
         Correct();
     }
 
-    private void Correct() {
+    public void Correct() {
         position = position.normalized;
         direction = direction - Vector3.Dot(direction, position) * position;
         direction = direction.normalized;

@@ -17,7 +17,6 @@ public class DumbAI : MonoBehaviour {
             GameObject target = World.GetNearestPlayer(sc);
             if (target != null) {
                 sc.SetDirectionTo(target.GetComponent<SC>().position);
-                GameObject nearest = World.GetNearestEnemy(sc);
                 sc.MoveForward(crit.speed);
             }
         }
