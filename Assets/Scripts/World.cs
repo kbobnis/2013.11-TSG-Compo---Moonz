@@ -16,29 +16,32 @@ public class World : MonoBehaviour {
     void Update () {
     }
 
-    public static GameObject GetNearestInArray(Vector3 position, List<GameObject> array) {
+    public static GameObject GetNearestInArray(SC sc, List<GameObject> array) {
         GameObject near = null;
         float nearDist = 0;
         for (int i=0; i<array.Count; ++i) {
             GameObject current = array[i];
-            float currDist = Vector3.Distance(position, current.GetComponent<SC>().position);
-            if (near == null || currDist < nearDist) {
-                nearDist = currDist;
-                near = current;
+            SC currSc = current.GetComponent<SC>();
+            if (sc != currSc) {
+                float currDist = Vector3.Distance(sc.position, currSc.position);
+                if (near == null || currDist < nearDist) {
+                    nearDist = currDist;
+                    near = current;
+                }
             }
         }
         return near;
     }
 
-    public static GameObject GetNearestPlayer(Vector3 position) {
-        return GetNearestInArray(position, players);
+    public static GameObject GetNearestPlayer(SC sc) {
+        return GetNearestInArray(sc, players);
     }
 
     public static void AddEnemy(GameObject e) {
         enemies.Add(e);
     }
 
-    public static GameObject GetNearestEnemy(Vector3 position) {
-        return GetNearestInArray(position, enemies);
+    public static GameObject GetNearestEnemy(SC sc) {
+        return GetNearestInArray(sc, enemies);
     }
 }

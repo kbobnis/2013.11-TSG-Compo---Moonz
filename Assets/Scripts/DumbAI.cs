@@ -14,16 +14,15 @@ public class DumbAI : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (sc && crit) {
-            GameObject target = World.GetNearestPlayer(sc.position);
+            GameObject target = World.GetNearestPlayer(sc);
             if (target != null) {
                 sc.SetDirectionTo(target.GetComponent<SC>().position);
-                GameObject nearest = World.GetNearestEnemy(sc.position);
+                GameObject nearest = World.GetNearestEnemy(sc);
                 bool canMove = true;
                 if (nearest != null && nearest != gameObject ) {
                     Vector3 nearestPos = nearest.GetComponent<SC>().position;
                     Vector3 nextPos = sc.GetForwardPosition(crit.speed);
-Debug.Log(Vector3.Distance(nextPos, nearestPos));
-                    if ( Vector3.Distance(nextPos, nearestPos) < 1) {
+                    if ( Vector3.Distance(nextPos, nearestPos) > Vector3.Distance(sc.position, nearestPos)) {
                         canMove = false;
                     }
                 }

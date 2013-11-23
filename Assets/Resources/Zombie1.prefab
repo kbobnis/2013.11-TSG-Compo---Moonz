@@ -89,6 +89,7 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
   height: 0
+  radius: .100000001
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -111,7 +112,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c38007aa93043bd8282cbcb5f3109e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: .00300000003
+  power: 1
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
