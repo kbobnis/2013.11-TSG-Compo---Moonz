@@ -1,15 +1,60 @@
 fileFormatVersion: 2
-guid: 213bc742e289b4248b3cf71d769f3752
+guid: 1b78a6119316045719360840b0e4272c
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
     100000: //RootNode
+    100002: tank mesh
+    100004: tankhead
+    100006: tankLArm1
+    100008: tankLArm2
+    100010: tankLArmCollarbone
+    100012: tankLArmf1
+    100014: tankLArmf1 1
+    100016: tankLArmPalm
+    100018: tankLCalf
+    100020: tankLFoot
+    100022: tankLThigh
+    100024: tankPelvis
+    100026: tankRArm1
+    100028: tankRArm2
+    100030: tankRArmCollarbone
+    100032: tankRArmf1
+    100034: tankRArmf1 1
+    100036: tankRArmPalm
+    100038: tankRCalf
+    100040: tankRFoot
+    100042: tankRibcage001
+    100044: tankRThigh
+    100046: tankSpine
     400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Icosphere
-    7400000: Default Take
+    400002: tank mesh
+    400004: tankhead
+    400006: tankLArm1
+    400008: tankLArm2
+    400010: tankLArmCollarbone
+    400012: tankLArmf1
+    400014: tankLArmf1 1
+    400016: tankLArmPalm
+    400018: tankLCalf
+    400020: tankLFoot
+    400022: tankLThigh
+    400024: tankPelvis
+    400026: tankRArm1
+    400028: tankRArm2
+    400030: tankRArmCollarbone
+    400032: tankRArmf1
+    400034: tankRArmf1 1
+    400036: tankRArmPalm
+    400038: tankRCalf
+    400040: tankRFoot
+    400042: tankRibcage001
+    400044: tankRThigh
+    400046: tankSpine
+    4300000: tank mesh
+    7400000: Take 001
     9500000: //RootNode
+    13700000: tank mesh
   materials:
     importMaterials: 1
     materialName: 0
@@ -28,7 +73,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .200000003
+    globalScale: .00499999989
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

@@ -33,6 +33,7 @@ public class ZombieSpawner : MonoBehaviour {
                float power = enemy.GetComponent<Critter>().power;
                if (power < maxEnemyPower && totalEnemiesPower + power < maxTotalEnemiesPower) {
                    enemy = Instantiate(enemy) as GameObject;
+                   enemy.GetComponent<SC>().SetPosition(-Camera.main.transform.position);
                    World.AddEnemy(enemy);
                    totalEnemiesPower += power;
                }

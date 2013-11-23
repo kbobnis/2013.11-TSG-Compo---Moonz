@@ -14,7 +14,7 @@ public class Missile : MonoBehaviour {
     }
     
     void Update () {
-        sc.MoveForward(mp.speed);
+        sc.MoveForward(mp.speed * Time.deltaTime);
 
 			foreach(var tmp in World.enemies.ToArray())
 			{
