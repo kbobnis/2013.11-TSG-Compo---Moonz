@@ -7,6 +7,7 @@ public class Critter : MonoBehaviour {
     public float hp;
     public float armorValue;
     public float shield;
+	public float maxHp;
 
     void Start () {
     }
