@@ -20,15 +20,15 @@ public class World : MonoBehaviour {
 		
 		if (names != players.Count)
 		{
-			/*if (names < players.Count)
+			if (names == 1)
 			{
-				var tmp = players[1];
-				players.Remove(tmp);
-				Destroy(tmp);
-				Debug.Log("usunieto gracza");
+				GameObject tmp = Resources.Load("Player", typeof(GameObject)) as GameObject;
+				GameObject tmp2 = Instantiate(tmp) as GameObject;
+				
+				tmp2.GetComponent<Player>().inputSuffix = "1";
+				players.Add(tmp2);
 			}
-			else*/
-			if (names > players.Count)
+			if (names == 2)
 			{
 				GameObject tmp = Resources.Load("Player", typeof(GameObject)) as GameObject;
 				GameObject tmp2 = Instantiate(tmp) as GameObject;
