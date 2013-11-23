@@ -33,8 +33,7 @@ public class World : MonoBehaviour {
 				GameObject tmp = Resources.Load("Player", typeof(GameObject)) as GameObject;
 				GameObject tmp2 = Instantiate(tmp) as GameObject;
 
-				tmp2.GetComponent<Player>().hname = "H2";
-				tmp2.GetComponent<Player>().vname = "V2";
+				tmp2.GetComponent<Player>().inputSuffix = "2";
 				players.Add(tmp2);
 			}
 		}
@@ -67,5 +66,9 @@ public class World : MonoBehaviour {
 
     public static GameObject GetNearestEnemy(SC sc) {
         return GetNearestInArray(sc, enemies);
+    }
+
+    public static void AddMissile(GameObject m) {
+        missiles.Add(m);
     }
 }

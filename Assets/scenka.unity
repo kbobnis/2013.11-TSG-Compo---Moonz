@@ -125,6 +125,10 @@ Prefab:
       propertyPath: vname
       value: V1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400004, guid: 69e76504a56bd45219bf225e0dc85c7e, type: 2}
+      propertyPath: inputSuffix
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 69e76504a56bd45219bf225e0dc85c7e, type: 2}
   m_RootGameObject: {fileID: 1156734527}
@@ -166,6 +170,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: .00600000005
   power: 0
+  hp: 0
 --- !u!114 &1156734529
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -178,8 +183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9fdf7c9ff38d43be9d9b35daeb34111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hname: H1
-  vname: V1
+  inputSuffix: 1
 --- !u!114 &1156734530
 MonoBehaviour:
   m_ObjectHideFlags: 0
