@@ -16,6 +16,28 @@ public class World : MonoBehaviour {
     }
     
     void Update () {
+		var names = Input.GetJoystickNames().Length;
+		
+		if (names != players.Count)
+		{
+			/*if (names < players.Count)
+			{
+				var tmp = players[1];
+				players.Remove(tmp);
+				Destroy(tmp);
+				Debug.Log("usunieto gracza");
+			}
+			else*/
+			if (names > players.Count)
+			{
+				GameObject tmp = Resources.Load("Player", typeof(GameObject)) as GameObject;
+				GameObject tmp2 = Instantiate(tmp) as GameObject;
+
+				tmp2.GetComponent<Player>().hname = "H2";
+				tmp2.GetComponent<Player>().vname = "V2";
+				players.Add(tmp2);
+			}
+		}
     }
 
     public static GameObject GetNearestInArray(SC sc, List<GameObject> array) {
