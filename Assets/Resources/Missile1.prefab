@@ -14,7 +14,6 @@ GameObject:
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
-  - 114: {fileID: 11400006}
   m_Layer: 0
   m_Name: Missile1
   m_TagString: Untagged
@@ -89,7 +88,7 @@ MonoBehaviour:
   position: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
   height: 0
-  radius: 0
+  radius: .0500000007
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,20 +112,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7e4f1d2eb97842359ff3ceaf549b368, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11400006
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ba6b72738de345138217266b74a3d11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: .600000024
-  dmg: 1
-  life: 1
+  speed: 0
+  dmg: 0
+  life: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

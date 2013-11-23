@@ -50,7 +50,7 @@ MonoBehaviour:
   shieldRestoreTime: 0
   speedChange: 0
   missilePrefab: {fileID: 0}
-  missileSpeed: 0
+  missileSpeed: 123
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -48,7 +48,6 @@ public class World : MonoBehaviour {
                         GameObject newPlayer = Instantiate(Resources.Load("Player", typeof(GameObject))) as GameObject;
                         inputSuffixes[key] = true;
                         newPlayer.GetComponent<Player>().inputSuffix = key;
-						newPlayer.GetComponent<Eq>().Add(Resources.Load("itemSword", typeof(GameObject)) as GameObject);
                         Debug.Log("Added player " + names[i] + " at pad "+ key);
                         players.Add(newPlayer);
                         playerByInput[names[i]] = newPlayer;

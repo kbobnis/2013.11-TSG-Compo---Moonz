@@ -49,8 +49,8 @@ MonoBehaviour:
   shieldValue: 0
   shieldRestoreTime: 0
   speedChange: 0
-  missilePrefab: {fileID: 100000, guid: f94a2d98fc7eb45c9b17a0229afca19a, type: 3}
-  missileSpeed: .200000003
+  missilePrefab: {fileID: 100000, guid: 6784dd79855714ac783f27a243362f5a, type: 2}
+  missileSpeed: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
