@@ -2,7 +2,6 @@
 using System.Collections;
 
 public class Player : MonoBehaviour {
-
     public string inputSuffix;
 
     protected SC sc;
@@ -15,7 +14,7 @@ public class Player : MonoBehaviour {
         sp = GetComponent<SP>();
         critter = GetComponent<Critter>();
     }
-    
+
     // Update is called once per frame
     void Update () {
         if (sc && critter) {
