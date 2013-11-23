@@ -6,7 +6,7 @@ public class Critter : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        speed = 0.02f;
+        speed = 0.005f;
     }
     
     // Update is called once per frame
