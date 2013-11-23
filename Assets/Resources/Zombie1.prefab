@@ -115,9 +115,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: .180000007
   power: 1
-  hp: 0
+  hp: 3
   armorValue: 0
   shield: 0
+  maxHp: 3
+  lastAttackTime: 0
+  eq: {fileID: 0}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -142,7 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropChance: .100000001
   dropsPrefabs:
-  - DropCoin
+  - {fileID: 100000, guid: 57d895411b18b4f8a95305727e8941a7, type: 2}
   dropWeights:
   - 1
 --- !u!1001 &100100000

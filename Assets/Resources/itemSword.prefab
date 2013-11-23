@@ -38,7 +38,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c118f8becda8a4465b7e70eec36c4fb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  name: sword
+  _name: 
   texture: {fileID: 2800000, guid: dd5e3247333f0de41bf79058143c3555, type: 3}
   slotName: left
   maxDist: 50
@@ -49,6 +49,8 @@ MonoBehaviour:
   shieldValue: 0
   shieldRestoreTime: 0
   speedChange: 0
+  missilePrefab: {fileID: 0}
+  missileSpeed: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

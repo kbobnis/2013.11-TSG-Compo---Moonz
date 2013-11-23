@@ -86,7 +86,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7bf0ddfcc824abab0df6fcb8b18dd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotation: {x: 0, y: 0, z: 0, w: 0}
+  rotation: {x: 0, y: 0, z: 0, w: 1}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -98,9 +98,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e56e0ae151e5d4f38a725ef8942671a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  itemPrefab: {fileID: 100000, guid: 7c13dc27fdea82e41a611200ed58e59b, type: 2}
 --- !u!114 &11400006
 MonoBehaviour:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
@@ -109,6 +110,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c118f8becda8a4465b7e70eec36c4fb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _name: 
+  texture: {fileID: 0}
+  slotName: 
+  maxDist: 0
+  angle: 0
+  damage: 0
+  dualHand: 0
+  cooldown: 0
+  shieldValue: 0
+  shieldRestoreTime: 0
+  speedChange: 0
+  missilePrefab: {fileID: 0}
+  missileSpeed: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

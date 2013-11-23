@@ -285,7 +285,6 @@ GameObject:
   - 95: {fileID: 1802067174}
   - 114: {fileID: 1802067178}
   - 114: {fileID: 1802067179}
-  - 114: {fileID: 1802067180}
   m_Layer: 0
   m_Name: planet
   m_TagString: Untagged
@@ -376,14 +375,3 @@ MonoBehaviour:
   totalEnemiesPowerGain: 0
   enemyPowerGain: 0
   spawnCooldown: .100000001
---- !u!114 &1802067180
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1802067173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9b8418063fd94837897afd826467486, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
