@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
-  - 95: {fileID: 9500000}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
@@ -28,7 +27,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: -.707106888, y: 0, z: -0, w: .707106769}
+  m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106709}
   m_LocalPosition: {x: 6.27951288, y: 1.08969283, z: -3.12854338}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -60,7 +59,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Mesh: {fileID: 4300000, guid: 213bc742e289b4248b3cf71d769f3752, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 8757f905bfd87435c8d4b05d25e0d7f0, type: 3}
 --- !u!95 &9500000
 Animator:
   serializedVersion: 2
@@ -88,7 +87,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
-  height: 0
+  height: .150000006
   radius: .0299999993
 --- !u!114 &11400002
 MonoBehaviour:
@@ -101,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c7bf0ddfcc824abab0df6fcb8b18dd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rotation: {x: -.765999973, y: 0, z: 0, w: .643999994}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,7 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: .00300000003
   power: 1
-  hp: 1
+  hp: 0
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
