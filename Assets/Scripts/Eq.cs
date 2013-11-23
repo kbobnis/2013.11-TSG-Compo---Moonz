@@ -5,10 +5,11 @@ public class Eq : MonoBehaviour
 {
 	public ArrayList backpack = new ArrayList();
 
-	public GameObject upSlot = null;
-	public GameObject leftSlot = null;
-	public GameObject rightSlot = null;
-	public GameObject downSlot = null;
+	public GameObject upSlot;
+	public GameObject leftSlot;
+	public GameObject rightSlot;
+	public GameObject downSlot;
+
 
 	// Use this for initialization
 	void Start () {
@@ -45,4 +46,11 @@ public class Eq : MonoBehaviour
 		this.backpack.Add(tmp);
 
 	}
+
+    public Item GetWeapon() {
+        if (leftSlot != null) {
+            return leftSlot.GetComponent<Item>();
+        }
+        return null;
+    }
 }

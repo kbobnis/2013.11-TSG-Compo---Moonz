@@ -31,4 +31,10 @@ public class Missile : MonoBehaviour {
             World.RemoveMissile(gameObject);
         }
     }
+
+    public void SetParamsFromWeapon(Item weapon) {
+        speed = weapon.missileSpeed;
+        dmg = weapon.damage;
+        life = weapon.maxDist / weapon.missileSpeed;
+    }
 }

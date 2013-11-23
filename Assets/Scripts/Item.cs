@@ -23,6 +23,7 @@ public class Item : MonoBehaviour {
 	public float speedChange;
 
     public GameObject missilePrefab;
+    public float missileSpeed;
 
     void Start () {
     

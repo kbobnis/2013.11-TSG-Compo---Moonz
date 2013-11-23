@@ -37,7 +37,7 @@ public class Player : MonoBehaviour {
 
             if (Mathf.Abs(fh) + Mathf.Abs(fv) > 0.5) {
                 Vector3 shootDirection = Camera.main.transform.up * fv + Camera.main.transform.right * fh;
-                Missiler.FireMissile("Missile1", gameObject, shootDirection);
+                critter.Attack(sc.position + shootDirection);
             }
 
             if (Input.GetButtonDown("PickItem")) {

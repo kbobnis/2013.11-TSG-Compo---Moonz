@@ -68,8 +68,9 @@ public class Gui : MonoBehaviour {
 
 		//down slot
 		GUI.DrawTexture(new Rect(offset + x1 + textureWidth + rectW, y1 + 2 * rectW , rectW, rectW), Resources.Load(slotName, typeof(Texture))as Texture);
-		Item downItem = eq.downSlot.GetComponent<Item>();
-		if (downItem != null){
+        GameObject downSlot = eq.downSlot;
+		if (downSlot != null){
+            Item downItem = downSlot.GetComponent<Item>();
 			GUI.DrawTexture(new Rect(offset + x1 + textureWidth + rectW, y1 + 2 * rectW , rectW, rectW), downItem.texture);
 		}
 
