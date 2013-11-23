@@ -15,15 +15,38 @@ public class Gui : MonoBehaviour {
 
 	void OnGUI(){
 
+		bool rightPlayer = GetComponent<Player>().inputSuffix=="2";
+
+		int x1 = (int)(Screen.width * 0.05f );
 		int textureHeight = 146;
 		int textureWidth = 50;
-		int x = (int)(Screen.width * 0.5f );
-		int y = (int)(Screen.height * 0.95f - textureHeight);
-		GUI.DrawTexture(new Rect(x, y, textureWidth, textureHeight), Resources.Load("life_bg", typeof(Texture)) as Texture);
+		int rectW = (int)(Screen.width * 0.05f);
+		int offset = (int)(Screen.width * 0.01f);
+
+		int playerGuiWidth = textureWidth + 3 * rectW + 2 * offset;
+		
+		if (rightPlayer)
+		{
+			x1 = (int)(Screen.width  - playerGuiWidth);
+		}
+
+		int y1 = (int)(Screen.height * 0.95f - textureHeight);
+
+		GUI.DrawTexture(new Rect(x1, y1, textureWidth, textureHeight), Resources.Load("life_bg", typeof(Texture)) as Texture);
 
 		float healthPercent = GetComponent<Critter>().hp / GetComponent<Critter>().maxHp;
 		int healthHeight = (int)(textureHeight * healthPercent);
-		GUI.DrawTexture(new Rect(x, Screen.height * 0.95f - textureHeight * healthPercent , 50, healthHeight), Resources.Load("life_fg", typeof(Texture)) as Texture);
+		GUI.DrawTexture(new Rect(x1, Screen.height * 0.95f - textureHeight * healthPercent , 50, healthHeight), Resources.Load("life_fg", typeof(Texture)) as Texture);
+		
+		string slotName = "slot";
+
+		GUI.DrawTexture(new Rect(offset + x1 + textureWidth + rectW, y1, rectW, rectW), Resources.Load(slotName, typeof(Texture))as Texture);
+
+		GUI.DrawTexture(new Rect(offset + x1 + textureWidth, y1 + rectW , rectW, rectW), Resources.Load(slotName, typeof(Texture))as Texture);
+
+		GUI.DrawTexture(new Rect(offset + x1 + textureWidth + 2 * rectW, y1 + rectW , rectW, rectW), Resources.Load(slotName, typeof(Texture))as Texture);
+
+		GUI.DrawTexture(new Rect(offset + x1 + textureWidth + rectW, y1 + 2 * rectW , rectW, rectW), Resources.Load(slotName, typeof(Texture))as Texture);
 
 	}
 }
