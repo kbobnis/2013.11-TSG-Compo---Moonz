@@ -23,7 +23,18 @@ public class World : MonoBehaviour {
     }
     
     void Update () {
-		var names = Input.GetJoystickNames();
+
+		if (players.Count <= 1) {
+		string[] names = null; 
+		bool pad2 = Input.GetKey(KeyCode.Joystick2Button0);
+		if (pad2) {
+			names = new string[] { "pad 1", "pad 2" };
+		}
+		else {
+			names = new string[] { "pad 1"};
+		}
+
+
         List<string> playersToRemove = new List<string>();
         foreach (string key in playerByInput.Keys) {
             playersToRemove.Add(key);
@@ -54,6 +65,7 @@ public class World : MonoBehaviour {
             Destroy(disconnectedPlayer);
             playerByInput.Remove(playersToRemove[i]);
         }
+		}
     }
 
     public static GameObject GetNearestInArray(SC sc, List<GameObject> array) {
