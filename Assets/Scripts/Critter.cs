@@ -19,7 +19,7 @@ public class Critter : MonoBehaviour {
 	{
 		this.hp -= dmg;
 		if (this.hp <= 0) {
-			this.gameObject.SendMessage("letMeDie");
+			this.gameObject.SendMessage("LetMeDie");
 		}
 
 	}

@@ -8,6 +8,7 @@ public class World : MonoBehaviour {
     public static List<GameObject> players;
     public static List<GameObject> enemies;
     public static List<GameObject> missiles;
+    public static List<GameObject> drops;
 
     public static Dictionary<string,GameObject> playerByInput; 
     public static Dictionary<string,bool> inputSuffixes;
@@ -16,6 +17,7 @@ public class World : MonoBehaviour {
         enemies = new List<GameObject>();
         players = new List<GameObject>(GameObject.FindGameObjectsWithTag("Player"));
         missiles = new List<GameObject>();
+        drops = new List<GameObject>();
         playerByInput = new Dictionary<string,GameObject>();
         inputSuffixes = new Dictionary<string,bool>();
         inputSuffixes["1"] = false;
@@ -85,12 +87,25 @@ public class World : MonoBehaviour {
         return GetNearestInArray(sc, enemies);
     }
 
+    public static GameObject GetNearestDrop(SC sc) {
+        return GetNearestInArray(sc, drops);
+    }
+
     public static void AddMissile(GameObject m) {
         missiles.Add(m);
     }
 
 	public static void RemoveEnemy(GameObject e) {
-			Destroy(e);
-			enemies.Remove(e);
+        Destroy(e);
+        enemies.Remove(e);
 	}
+
+    public static void AddDrop(GameObject d) {
+        drops.Add(d);
+    }
+
+    public static void RemoveDrop(GameObject d) {
+        Destroy(d);
+        drops.Remove(d);
+    }
 }

@@ -7,11 +7,34 @@ public class Dropper : MonoBehaviour {
     public string[] dropsPrefabs;
     public float[] dropWeights;
 
+    float weightsSum;
+
     void Start () {
-    
+        weightsSum = 0;
+        for (int i=0; i<dropWeights.Length; ++i) {
+            weightsSum += dropWeights[i];
+        }
     }
     
     void Update () {
     
     }
+
+    void LetMeDie() {
+        if (Random.value < dropChance) {
+            float pick = Random.value * weightsSum;
+            for (int i=0; i<dropWeights.Length; ++i) {
+                if (pick > dropWeights[i]) {
+                    pick -= dropWeights[i];
+                } else {
+                    GameObject drop = Instantiate(Resources.Load(dropsPrefabs[i])) as GameObject;
+                    drop.GetComponent<SC>().SetPosition(GetComponent<SC>().position);
+                    World.AddDrop(drop);
+                    break;
+                }
+            }
+        }
+    }
+
+
 }
