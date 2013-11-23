@@ -7,6 +7,7 @@ public class SC : MonoBehaviour {
     public Vector3 position;
     public Vector3 direction;
     public float height;
+    public float radius;
 
     void Awake() {
         position = new Vector3(0,0,1);
@@ -55,8 +56,18 @@ public class SC : MonoBehaviour {
         Correct();
     }
 
+    public Vector3 GetForwardPosition(float dist) {
+        Vector3 result = position + direction * dist;
+        return result.normalized;
+    }
+
     public Vector3 GetSide() {
         return Vector3.Cross(position, direction);
+    }
+
+    public bool IsColliding(GameObject go) {
+        SC b = go.GetComponent<SC>();
+        return b!=null&&Vector3.Distance(b.position,position)<radius+b.radius;
     }
     
     void Update () {
