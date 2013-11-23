@@ -8,10 +8,10 @@ public class Eq : MonoBehaviour
 	public string[] rightBackpack;
 	public string[] downBackpack;
 
-	public string upSlot;
-	public string leftSlot;
-	public string rightSlot;
-	public string downSlot;
+	public Item upSlot ;
+	public Item leftSlot;
+	public Item rightSlot;
+	public Item downSlot;
 
 	// Use this for initialization
 	void Start () {

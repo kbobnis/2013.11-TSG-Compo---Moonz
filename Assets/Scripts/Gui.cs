@@ -40,14 +40,36 @@ public class Gui : MonoBehaviour {
 		
 		string slotName = "slot";
 
+		Eq eq = GetComponent<Eq>();
 
+		//up slot
 		GUI.DrawTexture(new Rect(offset + x1 + textureWidth + rectW, y1, rectW, rectW), Resources.Load(slotName, typeof(Texture))as Texture);
+		Item upHandItem = eq.upSlot;
+		if (upHandItem != null) {
+			GUI.DrawTexture(new Rect(offset + x1 + textureWidth + rectW, y1, rectW, rectW), upHandItem.texture);
+		}
 
+		// left slot
 		GUI.DrawTexture(new Rect(offset + x1 + textureWidth, y1 + rectW , rectW, rectW), Resources.Load(slotName, typeof(Texture))as Texture);
+		Item leftItem = eq.leftSlot;
+		if (leftItem != null) {
+			GUI.DrawTexture(new Rect(offset + x1 + textureWidth + rectW, y1, rectW, rectW), leftItem.texture);
+		}
 
+		//right slot
 		GUI.DrawTexture(new Rect(offset + x1 + textureWidth + 2 * rectW, y1 + rectW , rectW, rectW), Resources.Load(slotName, typeof(Texture))as Texture);
+		Item rightItem = eq.rightSlot;
+		if (rightItem != null) {
+			GUI.DrawTexture(new Rect(offset + x1 + textureWidth + 2 * rectW, y1 + rectW , rectW, rectW), rightItem.texture);
+		}
 
+		//down slot
 		GUI.DrawTexture(new Rect(offset + x1 + textureWidth + rectW, y1 + 2 * rectW , rectW, rectW), Resources.Load(slotName, typeof(Texture))as Texture);
+		Item downItem = eq.downSlot;
+		if (downItem != null){
+			GUI.DrawTexture(new Rect(offset + x1 + textureWidth + rectW, y1 + 2 * rectW , rectW, rectW), downItem.texture);
+		}
+
 
 	}
 }

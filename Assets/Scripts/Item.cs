@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Item : MonoBehaviour {
-	public string name;
+	public string _name;
 	public Texture texture;
 
 	const string SLOT_UP = "up";
