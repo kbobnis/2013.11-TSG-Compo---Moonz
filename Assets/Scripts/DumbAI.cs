@@ -18,17 +18,7 @@ public class DumbAI : MonoBehaviour {
             if (target != null) {
                 sc.SetDirectionTo(target.GetComponent<SC>().position);
                 GameObject nearest = World.GetNearestEnemy(sc);
-                bool canMove = true;
-                if (nearest != null && nearest != gameObject ) {
-                    Vector3 nearestPos = nearest.GetComponent<SC>().position;
-                    Vector3 nextPos = sc.GetForwardPosition(crit.speed);
-                    if ( Vector3.Distance(nextPos, nearestPos) > Vector3.Distance(sc.position, nearestPos)) {
-                        canMove = false;
-                    }
-                }
-                if (canMove) {
-                    sc.MoveForward(crit.speed);
-                }
+                sc.MoveForward(crit.speed);
             }
         }
 	}

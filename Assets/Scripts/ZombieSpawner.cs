@@ -40,5 +40,22 @@ public class ZombieSpawner : MonoBehaviour {
                }
             }
         }
+
+        SpreadEvilGuys();
 	}
+
+
+    void SpreadEvilGuys() {
+        for (int i=0; i<World.enemies.Count; ++i) {
+            SC sc=World.enemies[i].GetComponent<SC>();
+            SC otherSc = World.GetNearestEnemy(sc).GetComponent<SC>();
+            float distance = Vector3.Distance(sc.position, otherSc.position) - sc.radius - otherSc.radius;
+            if (distance < 0) {
+                sc.SetDirectionTo(otherSc.position);
+                otherSc.SetDirectionTo(sc.position);
+                sc.MoveForward(distance*0.5f);
+                otherSc.MoveForward(distance*0.5f);
+            }
+        }
+    }
 }

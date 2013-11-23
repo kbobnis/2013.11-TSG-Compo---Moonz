@@ -560,8 +560,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560a21d83e1dc4fec82c04d9aa3e404f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTotalEnemiesPower: 5
+  maxTotalEnemiesPower: 100
   maxEnemyPower: 2
   totalEnemiesPowerGain: 0
   enemyPowerGain: 0
-  spawnCooldown: 5
+  spawnCooldown: .100000001
