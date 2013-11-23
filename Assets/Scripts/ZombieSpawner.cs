@@ -9,7 +9,7 @@ public class ZombieSpawner : MonoBehaviour {
     public float enemyPowerGain;
     public float spawnCooldown;
 
-    float totalEnemiesPower;
+    private static float totalEnemiesPower;
     float lastSpawnTime;
     ArrayList enemiesPrefabs;
 
@@ -44,6 +44,9 @@ public class ZombieSpawner : MonoBehaviour {
 
 
     void SpreadEvilGuys() {
+
+		lock(World.enemies)
+		{
         for (int i=0; i<World.enemies.Count; ++i) {
             SC sc=World.enemies[i].GetComponent<SC>();
             GameObject nearest = World.GetNearestEnemy(sc);
@@ -59,5 +62,10 @@ public class ZombieSpawner : MonoBehaviour {
                 }
             }
         }
+		}
     }
+
+	public static void EnemyDead(GameObject gameObject){
+		ZombieSpawner.totalEnemiesPower -= gameObject.GetComponent<Critter>().power;
+	}
 }

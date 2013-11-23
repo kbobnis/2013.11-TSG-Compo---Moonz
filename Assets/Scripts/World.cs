@@ -37,6 +37,7 @@ public class World : MonoBehaviour {
 				players.Add(tmp2);
 			}
 		}
+
     }
 
     public static GameObject GetNearestInArray(SC sc, List<GameObject> array) {
@@ -61,7 +62,10 @@ public class World : MonoBehaviour {
     }
 
     public static void AddEnemy(GameObject e) {
-        enemies.Add(e);
+		lock(enemies)
+		{
+        	enemies.Add(e);
+		}
     }
 
     public static GameObject GetNearestEnemy(SC sc) {
@@ -71,4 +75,12 @@ public class World : MonoBehaviour {
     public static void AddMissile(GameObject m) {
         missiles.Add(m);
     }
+
+	public static void RemoveEnemy(GameObject e) {
+		lock(enemies)
+		{
+			Destroy(e);
+			enemies.Remove(e);
+		}
+	}
 }

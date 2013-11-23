@@ -11,4 +11,14 @@ public class Critter : MonoBehaviour {
     
     void Update () {
     }
+
+	public void takeDamage(float dmg)
+	{
+		this.hp -= dmg;
+		if (this.hp <= 0)
+		{
+			this.gameObject.SendMessage("letMeDie");
+		}
+
+	}
 }
