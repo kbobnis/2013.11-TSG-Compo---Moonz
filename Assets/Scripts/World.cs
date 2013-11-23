@@ -7,10 +7,12 @@ public class World : MonoBehaviour {
     public static float radius = 5;
     public static List<GameObject> players;
     public static List<GameObject> enemies;
+    public static List<GameObject> missiles;
 
     void Start() {
         enemies = new List<GameObject>();
         players = new List<GameObject>(GameObject.FindGameObjectsWithTag("Player"));
+        missiles = new List<GameObject>();
     }
     
     void Update () {
