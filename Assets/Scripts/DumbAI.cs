@@ -15,8 +15,10 @@ public class DumbAI : MonoBehaviour {
 	void Update () {
         if (sc && crit) {
             GameObject target = World.GetNearestPlayer(sc.position);
-            sc.SetDirectionTo(target.GetComponent<SC>().position);
-            sc.MoveForward(crit.speed);
+            if (target != null) {
+                sc.SetDirectionTo(target.GetComponent<SC>().position);
+                sc.MoveForward(crit.speed);
+            }
         }
 	}
 }

@@ -6,7 +6,7 @@ public class World : MonoBehaviour {
     public static float radius = 5;
     public static GameObject[] players;
 
-    void Awake() {
+    void Start() {
         players = GameObject.FindGameObjectsWithTag("Player");
     }
     
