@@ -34,7 +34,7 @@ public class SC : MonoBehaviour {
     }
 
     public void SetDirectionTo(Vector3 target) {
-        direction = (target - position);
+        direction = target -position;
         Correct();
     }
 
@@ -42,6 +42,9 @@ public class SC : MonoBehaviour {
         position = position.normalized;
         direction = direction - Vector3.Dot(direction, position) * position;
         direction = direction.normalized;
+        if (direction.magnitude == 0) {
+            direction = new Vector3(0,1,0);
+        }
     }
 
     public void MoveForward(float speed) {
