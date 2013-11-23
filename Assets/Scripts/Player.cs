@@ -37,6 +37,22 @@ public class Player : MonoBehaviour {
                 Vector3 shootDirection = Camera.main.transform.up * fv + Camera.main.transform.right * fh;
                 Missiler.FireMissile("Missile1", gameObject, shootDirection);
             }
+
+            if (Input.GetButtonDown("PickItem")) {
+                PickDropIfAny();
+            }
+        }
+    }
+
+    void PickDropIfAny() {
+        GameObject dropObj = World.GetNearestDrop(sc);
+        if (dropObj != null && sc.IsColliding(dropObj)) {
+            dropObj.GetComponent<Drop>().TriggerTakeEffect();
+            Item item = dropObj.GetComponent<Item>();
+            if (item != null) {
+                SendMessage("AddItemToEq", item);
+            }
+            World.RemoveDrop(dropObj);
         }
     }
 }

@@ -24,7 +24,7 @@ public class DumbAI : MonoBehaviour {
         }
 	}
 
-	void letMeDie() {
+	void LetMeDie() {
 		World.RemoveEnemy(this.gameObject);
 		ZombieSpawner.EnemyDead(this.gameObject);
 
