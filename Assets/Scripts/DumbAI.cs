@@ -18,6 +18,7 @@ public class DumbAI : MonoBehaviour {
             if (target != null) {
                 sc.SetDirectionTo(target.GetComponent<SC>().position);
                 sc.MoveForward(crit.speed * speedModifier * Time.deltaTime);
+				crit.Attack(target.GetComponent<SC>().position);
             }
         }
 	}

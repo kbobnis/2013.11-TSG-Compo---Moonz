@@ -16,6 +16,7 @@ GameObject:
   - 114: {fileID: 11400006}
   - 114: {fileID: 11400008}
   - 114: {fileID: 11400010}
+  - 114: {fileID: 11400012}
   m_Layer: 0
   m_Name: Zombie1
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106709}
+  m_LocalRotation: {x: -.707106888, y: 0, z: -0, w: .707106769}
   m_LocalPosition: {x: 1000, y: 1.08969283, z: -3.12854338}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -164,6 +165,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 100000, guid: daf872e542dc6489d8f4b0304f3ff6de, type: 2}
   destroyTimeout: 3
+--- !u!114 &11400012
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469d38b6a23072648adbefc2d2502d4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  backpackFromGui: []
+  upSlot: {fileID: 0}
+  leftSlot: {fileID: 100000, guid: 7c13dc27fdea82e41a611200ed58e59b, type: 2}
+  rightSlot: {fileID: 0}
+  downSlot: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
