@@ -25,7 +25,12 @@ public class Eq : MonoBehaviour
 		
 	}
 
-	public void Add(GameObject tmp) {
+    // message z dropa
+    void AddItemToEq(GameObject tmp) {
+        backpack.Add(tmp);
+    }
+
+	public void Wear(GameObject tmp) {
 		Item item = tmp.GetComponent<Item>();
 
 		switch(item.slotName){
@@ -49,6 +54,20 @@ public class Eq : MonoBehaviour
     public Item GetWeapon() {
         if (leftSlot != null) {
             return leftSlot.GetComponent<Item>();
+        }
+        return null;
+    }
+
+    public Item GetArmor() {
+        if (upSlot != null) {
+            return upSlot.GetComponent<Item>();
+        }
+        return null;
+    }
+
+    public Item GetShield() {
+        if (rightSlot != null) {
+            return rightSlot.GetComponent<Item>();
         }
         return null;
     }

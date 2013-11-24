@@ -12,10 +12,10 @@ public class Critter : MonoBehaviour {
     public string team;
     public float points;
 
-    public float lastAttackTime;
+    float lastAttackTime;
 
-    public Eq eq;
-    public SC sc;
+    Eq eq;
+    SC sc;
 
     void Start () {
         eq = GetComponent<Eq>();
@@ -28,6 +28,29 @@ public class Critter : MonoBehaviour {
 
     public float TakeDamage(float dmg)
     {
+        if (eq != null) {
+            float totalArmor = armorValue;
+            Item armor = eq.GetArmor();
+            if (armor != null) {
+                totalArmor += armor.armorValue;
+            }
+            dmg = Mathf.Max(0, dmg - totalArmor * dmg);
+
+            Item shield = eq.GetShield();
+            if (shield != null) {
+                float shieldedDmg = Mathf.Min(this.shield, shield.shieldValue * dmg);
+                dmg = Mathf.Max(0, dmg - shieldedDmg);
+                this.shield = Mathf.Max(0, this.shield - shieldedDmg);
+            }
+        }
+
+        if (dmg > 0) {
+            GameObject blood = Instantiate(Resources.Load("SmallBloodSplash")) as GameObject;
+            blood.transform.localPosition = transform.localPosition;
+            blood.transform.localRotation = transform.localRotation;
+            Destroy(blood, 1);
+        }
+
         float overkill = dmg - hp;
         hp -= dmg;
         if (hp <= 0) {

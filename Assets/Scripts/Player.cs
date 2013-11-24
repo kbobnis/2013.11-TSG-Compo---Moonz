@@ -89,7 +89,7 @@ public class Player : MonoBehaviour {
         if (dropObj != null && sc.IsColliding(dropObj)) {
             Drop drop = dropObj.GetComponent<Drop>();
             if (drop.itemPrefab != null) {
-                SendMessage("AddItemToEq", drop.itemPrefab.GetComponent<Item>());
+                SendMessage("AddItemToEq", Instantiate(drop.itemPrefab));
             }
             drop.TriggerTakeEffect();
             World.RemoveDrop(dropObj);

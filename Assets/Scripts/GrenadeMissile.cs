@@ -27,7 +27,7 @@ public class GrenadeMissile : Missile {
             GameObject bigBoom = Instantiate(Resources.Load("BigBoom")) as GameObject;
             bigBoom.transform.localPosition = gameObject.transform.localPosition;
             bigBoom.transform.localRotation = gameObject.transform.localRotation;
-            Destroy(bigBoom, 2);
+            Destroy(bigBoom, 1);
         } else {
             life -= Time.deltaTime;
         }

@@ -24,8 +24,8 @@ Material:
         first:
           name: _Detail
         second:
-          m_Texture: {fileID: 2800000, guid: 9f3bb37f8a2f245cd852a54dea950383, type: 3}
-          m_Scale: {x: 20, y: 10}
+          m_Texture: {fileID: 2800000, guid: 1b130c84eefe4498f884b834f8058d0e, type: 3}
+          m_Scale: {x: 6, y: 3}
           m_Offset: {x: 0, y: 0}
     m_Floats: {}
     m_Colors:

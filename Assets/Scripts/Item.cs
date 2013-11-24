@@ -18,6 +18,8 @@ public class Item : MonoBehaviour {
 	public bool dualHand;
 	public float cooldown;
 
+    public float armorValue;
+
 	public float shieldValue;
 	public float shieldRestoreTime;
 	public float speedChange;
