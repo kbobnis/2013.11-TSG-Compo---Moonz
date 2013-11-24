@@ -18,6 +18,7 @@ public class ZombieSpawner : MonoBehaviour {
         lastSpawnTime = 0;
         enemiesPrefabs = new ArrayList();
         enemiesPrefabs.Add(Resources.Load("Zombie1", typeof(GameObject)) as GameObject);
+        enemiesPrefabs.Add(Resources.Load("ZombieTaran", typeof(GameObject)) as GameObject);
     }
     
     void Update () {

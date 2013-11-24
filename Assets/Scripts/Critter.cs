@@ -10,6 +10,7 @@ public class Critter : MonoBehaviour {
     public float shield;
     public float maxHp;
     public string team;
+    public float points;
 
     public float lastAttackTime;
 
@@ -48,11 +49,12 @@ public class Critter : MonoBehaviour {
                         missileObj.GetComponent<SC>().SetDirectionTo(target);
                         World.AddMissile(missileObj);
                     } else {
-                        GameObject slashFx = Instantiate(Resources.Load("Slash"), transform.localPosition, transform.localRotation) as GameObject;
+                        Vector3 attackDirection = target - sc.position;
+                        Quaternion postRotation = Quaternion.FromToRotation(sc.direction, attackDirection.normalized);
+                        GameObject slashFx = Instantiate(Resources.Load("Slash"), transform.localPosition, postRotation) as GameObject;
                         slashFx.transform.parent = transform;
 
                         List<GameObject> enemies = World.GetOppositeCollection(team);
-                        Vector3 attackDirection = target - sc.position;
                         for (int i=enemies.Count - 1; i>=0; --i) {
                             SC enemySc = enemies[i].GetComponent<SC>();
                             if (sc.GetAngleFromTo(attackDirection, enemySc.position) < weapon.angle && Vector3.Distance(sc.position, enemySc.position) < weapon.maxDist) {

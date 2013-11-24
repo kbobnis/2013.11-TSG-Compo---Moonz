@@ -12,6 +12,8 @@ public class World : MonoBehaviour {
 
     public static Dictionary<string,bool> inputSuffixes;
 
+    public static float score;
+
     void Start() {
         enemies = new List<GameObject>();
         players = new List<GameObject>(GameObject.FindGameObjectsWithTag("Player"));
@@ -20,6 +22,7 @@ public class World : MonoBehaviour {
         inputSuffixes = new Dictionary<string,bool>();
         inputSuffixes["1"] = false;
         inputSuffixes["2"] = false;
+        score = 0;
     }
     
     void Update () {
@@ -63,6 +66,12 @@ public class World : MonoBehaviour {
             return players;
         }
     }
+
+    public static void RemovePlayer(GameObject g) {
+        Destroy(g);
+        players.Remove(g);
+    }
+
 
     public static GameObject GetNearestPlayer(SC sc) {
         return GetNearestInArray(sc, players);

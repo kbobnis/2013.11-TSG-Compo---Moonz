@@ -4,7 +4,8 @@ using System.Collections.Generic;
 
 public class Missile : MonoBehaviour {
 
-    SC sc;
+    protected SC sc;
+    protected SP sp;
     public float speed;
     public float dmg;
     public float life;
@@ -12,6 +13,7 @@ public class Missile : MonoBehaviour {
 
     void Start () {
         sc = GetComponent<SC>();
+        sp = GetComponent<SP>();
     }
 
     void Update () {
@@ -35,7 +37,7 @@ public class Missile : MonoBehaviour {
         }
     }
 
-    public void SetParamsFromWeapon(Item weapon) {
+    public virtual void SetParamsFromWeapon(Item weapon) {
         speed = weapon.missileSpeed;
         dmg = weapon.damage;
         life = weapon.maxDist / weapon.missileSpeed;

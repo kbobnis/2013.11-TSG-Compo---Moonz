@@ -122,6 +122,7 @@ MonoBehaviour:
   shield: 0
   maxHp: 3
   team: b
+  points: 10
   lastAttackTime: 0
   eq: {fileID: 0}
   sc: {fileID: 0}
@@ -178,7 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backpackFromGui: []
   upSlot: {fileID: 0}
-  leftSlot: {fileID: 100000, guid: 7c13dc27fdea82e41a611200ed58e59b, type: 2}
+  leftSlot: {fileID: 100000, guid: f2dddacb3cb3649a386fe821b5ed5c9d, type: 2}
   rightSlot: {fileID: 0}
   downSlot: {fileID: 0}
 --- !u!1001 &100100000

@@ -64,7 +64,6 @@ public class Player : MonoBehaviour {
             float fh = Input.GetAxis("FH"+inputSuffix);
             float fv = Input.GetAxis("FV"+inputSuffix);
             float angle = Mathf.Atan2(fh, fv);
-            sp.rotation = Quaternion.Euler(0, angle * 180 / Mathf.PI, 0);
 
 			float upShot = Input.GetKey(KeyCode.UpArrow)?1:0;
 			float downShot = Input.GetKey(KeyCode.DownArrow)?-1:0;
@@ -75,6 +74,7 @@ public class Player : MonoBehaviour {
             if (Mathf.Abs(fh) + Mathf.Abs(fv) > 0.5 || leftShot != 0 || rightShot != 0 || upShot != 0 || downShot != 0){
                 Vector3 shootDirection = Camera.main.transform.up * (fv +upShot + downShot)+ Camera.main.transform.right * (fh + leftShot + rightShot);
                 critter.Attack(sc.position + shootDirection);
+                sp.rotation = Quaternion.Euler(0, angle * 180 / Mathf.PI, 0);
             }
 
             if (Input.GetButtonDown("PickItem") || Input.GetKey(KeyCode.Space)) {
@@ -94,5 +94,9 @@ public class Player : MonoBehaviour {
             drop.TriggerTakeEffect();
             World.RemoveDrop(dropObj);
         }
+    }
+
+    void LetMeDie() {
+        World.RemovePlayer(gameObject);
     }
 }
