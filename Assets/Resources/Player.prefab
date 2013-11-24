@@ -754,7 +754,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 7c13dc27fdea82e41a611200ed58e59b, type: 2}
   - {fileID: 100000, guid: 7ca07b33f4c134d52804aedfc6213fe8, type: 2}
   upSlot: {fileID: 0}
-  leftSlot: {fileID: 100000, guid: 7ca07b33f4c134d52804aedfc6213fe8, type: 2}
+  leftSlot: {fileID: 0}
   rightSlot: {fileID: 0}
   downSlot: {fileID: 0}
 --- !u!137 &13700000

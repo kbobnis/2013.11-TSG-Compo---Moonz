@@ -22,14 +22,9 @@ public class Eq : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-	
+		
 	}
-	/*
-	 * 	const string SLOT_UP = "up";
-		const string SLOT_DOWN = "down";
-		const string SLOT_LEFT = "left";
-		const string SLOT_RIGHT = "right
-	*/
+
 	public void Add(GameObject tmp) {
 		Item item = tmp.GetComponent<Item>();
 
@@ -57,4 +52,62 @@ public class Eq : MonoBehaviour
         }
         return null;
     }
+
+	public void ChangeSlot(string slotName)
+	{
+		GameObject tmp = null;
+
+		switch(slotName){
+			case Item.SLOT_UP:
+				tmp = upSlot;
+				break;
+			case Item.SLOT_DOWN:
+				tmp = downSlot;
+				break;
+			case Item.SLOT_RIGHT:
+				tmp = rightSlot;
+				break;
+			case Item.SLOT_LEFT:
+				tmp = leftSlot;
+				break;
+		}
+			
+		int lastIndex = 0;
+
+		if (tmp != null) {
+			lastIndex = backpack.LastIndexOf(tmp);
+		}
+
+		bool stillLooking = true;
+		GameObject tmp2 = null;
+		int j =0; 
+		for(int i=lastIndex+1; stillLooking && j < backpack.Count  + 1; i++, j++) {
+			i = i % backpack.Count;
+			string slotNameTmp = (backpack[i] as GameObject).GetComponent<Item>().slotName;
+
+			if (slotNameTmp == slotName) {
+				stillLooking = false;
+				tmp2 = backpack[i] as GameObject;
+			}
+			Debug.Log ("i is: " + i + ", j: " + j + ", slot name tmp is: " + slotNameTmp + ", slotName : "  + slotName);
+		}
+		Debug.Log ("got out of for, j: " + j);
+
+		if (tmp2 != null){
+			switch(slotName){
+			case Item.SLOT_UP:
+				upSlot = tmp2;
+				break;
+			case Item.SLOT_DOWN:
+				downSlot = tmp2;
+				break;
+			case Item.SLOT_RIGHT:
+				rightSlot = tmp2;
+				break;
+			case Item.SLOT_LEFT:
+				leftSlot = tmp2;
+				break;
+			}
+		}
+	}
 }

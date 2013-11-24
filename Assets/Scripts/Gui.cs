@@ -54,7 +54,7 @@ public class Gui : MonoBehaviour {
 		GameObject leftSlot = eq.leftSlot;
 		if (leftSlot != null) {
 			Item leftItem = leftSlot.GetComponent<Item>();
-			GUI.DrawTexture(new Rect(offset + x1 + textureWidth + rectW, y1, rectW, rectW), leftItem.texture);
+			GUI.DrawTexture(new Rect(offset + x1 + textureWidth, y1 + rectW, rectW, rectW), leftItem.texture);
 		}
 
 		//right slot
