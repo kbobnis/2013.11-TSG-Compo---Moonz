@@ -68,12 +68,21 @@ public class Player : MonoBehaviour {
 			float h = Input.GetAxis("H"+inputSuffix);
             float v = Input.GetAxis("V"+inputSuffix);
 
+            float angle;
+            if (Mathf.Abs(h) + Mathf.Abs(v) > 0.5f) {
+                GetComponent<Animator>().SetInteger("animId", 0);
+                angle = Mathf.Atan2(h, v);
+                sp.rotation = Quaternion.Euler(0, angle * 180 / Mathf.PI, 0);
+            } else {
+                GetComponent<Animator>().SetInteger("animId", 1);
+            }
+
             sc.MoveForward(  (v + _up + _down)* critter.speed * Time.deltaTime);
             sc.MoveSide( (h + _left + _right) * critter.speed * Time.deltaTime);
 
             float fh = Input.GetAxis("FH"+inputSuffix);
             float fv = Input.GetAxis("FV"+inputSuffix);
-            float angle = Mathf.Atan2(fh, fv);
+            angle = Mathf.Atan2(fh, fv);
 
 			float upShot = Input.GetKey(KeyCode.UpArrow)?1:0;
 			float downShot = Input.GetKey(KeyCode.DownArrow)?-1:0;
