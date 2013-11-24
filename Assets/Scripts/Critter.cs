@@ -36,7 +36,6 @@ public class Critter : MonoBehaviour {
             Item weapon = eq.GetWeapon();
             if (weapon != null) {
                 if (Time.time - lastAttackTime > weapon.cooldown) {
-                    Debug.Log("HERE " + weapon.missileSpeed * 100);
                     if (weapon.missilePrefab != null) {
                         GameObject missileObj = Instantiate(weapon.missilePrefab) as GameObject;
                         missileObj.GetComponent<Missile>().SetParamsFromWeapon(weapon);
