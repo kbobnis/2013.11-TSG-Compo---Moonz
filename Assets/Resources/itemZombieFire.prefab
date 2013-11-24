@@ -42,17 +42,22 @@ MonoBehaviour:
   _name: Zombie Fire
   texture: {fileID: 2800000, guid: 317549f9a790f433c9ffdf87a061dfa7, type: 3}
   slotName: left
-  maxDist: 3
+  maxDist: 1.5
   angle: 5
   damage: 2
   dualHand: 0
   cooldown: 1.5
   armorValue: 0
-  shieldValue: 0
+  shieldProtection: 0
   shieldRestoreTime: 0
+  shieldTotalHp: 0
+  shieldHp: 0
   speedChange: 0
+  buffDuration: 0
   missilePrefab: {fileID: 100000, guid: c63ff6db32eb944e1aa03b1affe8dfad, type: 2}
   missileSpeed: 1
+  healing: 0
+  perm: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

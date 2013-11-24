@@ -37,16 +37,16 @@ public class ZombieSpawner : MonoBehaviour {
         AddEnemiesToWave("Zombie1", 20);
 
         CreateWave();
-        AddEnemiesToWave("Zombie1", 15);
-        AddEnemiesToWave("ZombieArcher", 10);
+        AddEnemiesToWave("Zombie1", 25);
+        AddEnemiesToWave("ZombieArcher", 3);
 
         CreateWave();
         AddEnemiesToWave("Zombie1", 30);
-        AddEnemiesToWave("ZombieArcher", 15);
+        AddEnemiesToWave("ZombieArcher", 10);
 
         CreateWave();
         AddEnemiesToWave("Zombie1", 20);
-        AddEnemiesToWave("ZombieArcher", 20);
+        AddEnemiesToWave("ZombieArcher", 15);
         AddEnemiesToWave("ZombieTaran", 5);
 
         CreateWave();
@@ -95,8 +95,13 @@ public class ZombieSpawner : MonoBehaviour {
         if (keepCalmAndWaitForNextWave) {
             GUI.Label(new Rect(Screen.width*0.25f, Screen.height*0.25f, Screen.width*0.75f, Screen.height*0.75f), "<size=40>Get ready! Wave " + (currentWaveId+2)+"</size>");
         }
+		int h = (int)(0.1f*Screen.height);
+		int y = (int)(0.15f*Screen.height);
+		GUI.Label(new Rect(0.01f*Screen.width, y, 0.3f*Screen.width, h), "Wave " + (currentWaveId+1));
+
+		y += h;
         if (numEnemiesLeft >= 0) {
-            GUI.Label(new Rect(0.01f*Screen.width, 0.15f*Screen.height, 0.3f*Screen.width, 0.1f*Screen.height), "Left: " + numEnemiesLeft);
+            GUI.Label(new Rect(0.01f*Screen.width, y, 0.3f*Screen.width, 0.1f*Screen.height), "Enemies Left: " + numEnemiesLeft);
         }
     }
 

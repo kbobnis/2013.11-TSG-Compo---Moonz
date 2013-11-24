@@ -124,7 +124,6 @@ MonoBehaviour:
   team: b
   points: 10
   shieldActive: 0
-  buffSpeed: 0
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -156,12 +155,12 @@ MonoBehaviour:
   - {fileID: 100000, guid: 1618ee0b259114fb794f90f0cf6d404d, type: 2}
   - {fileID: 100000, guid: b1beecb7701884b148d584f681c6899e, type: 2}
   dropWeights:
-  - 1
+  - .400000006
   - .200000003
   - .100000001
   - .5
   - .400000006
-  - 100
+  - .600000024
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -206,6 +205,7 @@ MonoBehaviour:
   death: {fileID: 8300000, guid: 8e1b9ee3b89479f499925261492cb8cf, type: 3}
   gotHit: {fileID: 8300000, guid: dd53b17fc99e4c548832f0a965cf5c8c, type: 3}
   spawn: {fileID: 0}
+  move: {fileID: 8300000, guid: e5982ca5e27965d49893ff00c4f64c7b, type: 3}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

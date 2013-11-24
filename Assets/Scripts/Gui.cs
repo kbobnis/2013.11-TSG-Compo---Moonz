@@ -30,13 +30,15 @@ public class Gui : MonoBehaviour {
 			x1 = (int)(Screen.width  - playerGuiWidth);
 		}
 
-		int y1 = (int)(Screen.height * 0.95f - textureHeight);
-
-		GUI.DrawTexture(new Rect(x1, y1, textureWidth, textureHeight), Resources.Load("life_bg", typeof(Texture)) as Texture);
+		int y1 = (int)(Screen.height * 0.75f - textureHeight);
 
 		float healthPercent = GetComponent<Critter>().hp / GetComponent<Critter>().maxHp;
-		int healthHeight = (int)(textureHeight * healthPercent);
-		GUI.DrawTexture(new Rect(x1 + 5, Screen.height * 0.95f - textureHeight * healthPercent , 40, healthHeight), Resources.Load("life_fg", typeof(Texture)) as Texture);
+		int healthBarHeight = textureHeight * 2;
+		int healthHeight = (int)(healthBarHeight * healthPercent);
+		GUI.DrawTexture(new Rect(x1 + 5, y1 + healthBarHeight - healthBarHeight * healthPercent , 40, healthHeight), Resources.Load("life_fg", typeof(Texture)) as Texture);
+		GUI.DrawTexture(new Rect(x1, y1, textureWidth, healthBarHeight), Resources.Load("life_bg", typeof(Texture)) as Texture);
+
+
 		
 		string slotName = "slot";
 
