@@ -40,6 +40,11 @@ public class World : MonoBehaviour {
                 GameObject newPlayer = Instantiate(Resources.Load("Player", typeof(GameObject))) as GameObject;
                 newPlayer.GetComponent<Player>().inputSuffix = key;
                 players.Add(newPlayer);
+                if (key == "2") {
+                    foreach (var renderer in newPlayer.GetComponentsInChildren<SkinnedMeshRenderer>()) {
+                        renderer.material= Resources.Load("tankYellow") as Material;
+                    }
+                }
                 inputSuffixes[key] = true;
                 Debug.Log("Added player " + key);
             }

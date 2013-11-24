@@ -38,25 +38,25 @@ public class ZombieSpawner : MonoBehaviour {
 
         CreateWave();
         AddEnemiesToWave("Zombie1", 15);
-        AddEnemiesToWave("ZombieArcher", 10);
+        AddEnemiesToWave("ZombieArcher", 5);
 
         CreateWave();
         AddEnemiesToWave("Zombie1", 30);
-        AddEnemiesToWave("ZombieArcher", 15);
+        AddEnemiesToWave("ZombieArcher", 6);
 
         CreateWave();
         AddEnemiesToWave("Zombie1", 20);
-        AddEnemiesToWave("ZombieArcher", 20);
+        AddEnemiesToWave("ZombieArcher", 10);
         AddEnemiesToWave("ZombieTaran", 5);
 
         CreateWave();
         AddEnemiesToWave("Zombie1", 25);
-        AddEnemiesToWave("ZombieArcher", 25);
-        AddEnemiesToWave("ZombieTaran", 15);
+        AddEnemiesToWave("ZombieArcher", 15);
+        AddEnemiesToWave("ZombieTaran", 10);
 
         CreateWave();
         AddEnemiesToWave("Zombie1", 20);
-        AddEnemiesToWave("ZombieArcher", 20);
+        AddEnemiesToWave("ZombieArcher", 15);
         AddEnemiesToWave("ZombieTaran", 20);
         AddEnemiesToWave("Boss", 1);
 
@@ -103,7 +103,6 @@ public class ZombieSpawner : MonoBehaviour {
     void Update () {
         if (numEnemiesLeft == 0) {
             // next waves
-            Debug.Log("WaveDone");
             Invoke("NextWave", 5);
             numEnemiesLeft = -1;
             keepCalmAndWaitForNextWave = true;
