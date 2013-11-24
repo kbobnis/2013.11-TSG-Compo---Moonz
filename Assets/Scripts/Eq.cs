@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using System;
 
 public class Eq : MonoBehaviour 
 {
@@ -12,6 +13,8 @@ public class Eq : MonoBehaviour
 	public GameObject leftSlot;
 	public GameObject rightSlot;
 	public GameObject downSlot;
+
+	private long lastChangeTime;
 
 
 	// Use this for initialization
@@ -48,7 +51,8 @@ public class Eq : MonoBehaviour
                     return;
                 }
             }
-            backpack.Add(tmp);
+
+			WearIfEmpty(tmp);
         }
     }
 
@@ -73,9 +77,35 @@ public class Eq : MonoBehaviour
         }
     }
 
-	public void Wear(GameObject what) {
+	private void WearIfEmpty(GameObject what) {
 		Item item = what.GetComponent<Item>();
 
+		switch(item.slotName){
+		case Item.SLOT_UP:
+			if (upSlot == null)
+				upSlot = what;
+			break;
+		case Item.SLOT_DOWN:
+			if (downSlot == null)
+				downSlot = what;
+			break;
+		case Item.SLOT_LEFT:
+			if (leftSlot == null)
+				leftSlot = what;
+			break;
+		case Item.SLOT_RIGHT:
+			if (rightSlot == null)
+				rightSlot = what;
+			break;
+		}
+		this.backpack.Add(what);
+	}
+
+
+	public void Wear(GameObject what) {
+		Item item = what.GetComponent<Item>();
+		
+		
 		switch(item.slotName){
 			case Item.SLOT_UP:
 				upSlot = what;
@@ -124,6 +154,11 @@ public class Eq : MonoBehaviour
 
 	public void ChangeSlot(string slotName)
 	{
+		long diff = DateTime.Now.Ticks - lastChangeTime;
+		if (diff < 1500000) //nie chcemy za czesto zmieniac, bo get axis bedzie przychodzic co kazdego update
+			return ;
+
+		lastChangeTime = DateTime.Now.Ticks;
 		GameObject tmp = null;
 
 		switch(slotName){
@@ -158,9 +193,7 @@ public class Eq : MonoBehaviour
 				stillLooking = false;
 				tmp2 = backpack[i] as GameObject;
 			}
-			Debug.Log ("i is: " + i + ", j: " + j + ", slot name tmp is: " + slotNameTmp + ", slotName : "  + slotName);
 		}
-		Debug.Log ("got out of for, j: " + j);
 
 		if (tmp2 != null){
 			switch(slotName){

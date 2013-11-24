@@ -94,6 +94,7 @@ public class ZombieSpawner : MonoBehaviour {
             // next waves
             Debug.Log("WaveDone");
             Invoke("NextWave", 5);
+            numEnemiesLeft = -1;
         } else {
             if (waves[currentWaveId].Count > 0) {
                 if (Time.time - lastSpawnTime > spawnCooldown) {

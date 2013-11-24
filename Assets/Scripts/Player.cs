@@ -25,6 +25,7 @@ public class Player : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+
         if (sc && critter) {
             
 			float _up = Input.GetKey(KeyCode.W)?1:0;
@@ -48,21 +49,18 @@ public class Player : MonoBehaviour {
 				GetComponent<Eq>().ChangeSlot(Item.SLOT_DOWN);
 				_down = 0;
 			}
-			
-			bool leftChange = Input.GetKeyDown("joystick " + inputSuffix + " button 7") || (Input.GetKeyDown (KeyCode.LeftArrow) &&Input.GetKey(KeyCode.LeftShift));
-			if (leftChange){
+
+			if (MoonzInput.GetKeyDown(MoonzInput.ARROW_LEFT, inputSuffix)){
 				GetComponent<Eq>().ChangeSlot(Item.SLOT_LEFT);
 				_left = 0;
 			}
 			
-			bool rightChange = Input.GetKeyDown("joystick " + inputSuffix + " button 5") || Input.GetKeyDown (KeyCode.RightArrow) && Input.GetKey(KeyCode.LeftShift);
-            if (rightChange){
+			if (MoonzInput.GetKeyDown(MoonzInput.ARROW_RIGHT, inputSuffix)){
                 GetComponent<Eq>().ChangeSlot(Item.SLOT_RIGHT);
 				_right = 0;
             }
 
-			bool shieldToggled= Input.GetKeyDown("joystick " + inputSuffix + " button 12") || Input.GetKeyDown("joystick " + inputSuffix + " button 3");
-            if (shieldToggled && eq.GetShield() != null) {
+            if (MoonzInput.GetKeyDown(MoonzInput.B, inputSuffix) && eq.GetShield() != null) {
                 critter.shieldActive = !critter.shieldActive;
             }
             bubble.SetActive(critter.shieldActive && eq.GetShield() != null);
@@ -106,7 +104,7 @@ public class Player : MonoBehaviour {
                 sp.rotation = Quaternion.Euler(0, angle * 180 / Mathf.PI, 0);
             }
 
-			if (Input.GetButtonDown("PickItem") || Input.GetKey(KeyCode.Space) || Input.GetKeyDown("joystick " + inputSuffix + " button 2")) {
+			if (Input.GetKey(KeyCode.Space) || Input.GetKeyDown("joystick " + inputSuffix + " button 2")) {
                 PickDropIfAny();
             }
 
