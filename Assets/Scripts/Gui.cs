@@ -36,7 +36,7 @@ public class Gui : MonoBehaviour {
 
 		float healthPercent = GetComponent<Critter>().hp / GetComponent<Critter>().maxHp;
 		int healthHeight = (int)(textureHeight * healthPercent);
-		GUI.DrawTexture(new Rect(x1, Screen.height * 0.95f - textureHeight * healthPercent , 50, healthHeight), Resources.Load("life_fg", typeof(Texture)) as Texture);
+		GUI.DrawTexture(new Rect(x1 + 5, Screen.height * 0.95f - textureHeight * healthPercent , 40, healthHeight), Resources.Load("life_fg", typeof(Texture)) as Texture);
 		
 		string slotName = "slot";
 
