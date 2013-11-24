@@ -39,18 +39,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Grenade
-  texture: {fileID: 2800000, guid: f56fdd87d19eb46f89f9315a5086424d, type: 3}
+  texture: {fileID: 2800000, guid: 6101f9f4e55354c82b503ec3a387f4bc, type: 3}
   slotName: left
   maxDist: .600000024
   angle: 1
   damage: 10
   dualHand: 0
   cooldown: 2
+  armorValue: 0
   shieldValue: 0
   shieldRestoreTime: 0
   speedChange: 0
   missilePrefab: {fileID: 100000, guid: a701d850214784b73a86bf76299464b6, type: 2}
   missileSpeed: 1
+  healing: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

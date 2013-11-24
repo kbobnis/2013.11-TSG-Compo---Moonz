@@ -90,11 +90,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47bd32e27c8eb468d8a80d55aa4292f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropChance: .100000001
+  dropChance: .150000006
   dropsPrefabs:
-  - {fileID: 100000, guid: 57d895411b18b4f8a95305727e8941a7, type: 2}
+  - {fileID: 100000, guid: ee67f364c14054405a48f2a3a0492b2d, type: 2}
+  - {fileID: 100000, guid: ea7bc6d840a714d948237a85f990c55b, type: 2}
+  - {fileID: 100000, guid: 7bf51fe56c5c04714bd896d3db0e69a1, type: 2}
   dropWeights:
   - 1
+  - .200000003
+  - .5
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,7 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: .180000007
-  power: 3
+  power: 3.20000005
   hp: 6
   armorValue: 0
   shield: 0

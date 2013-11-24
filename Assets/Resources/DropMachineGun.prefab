@@ -10,12 +10,11 @@ GameObject:
   - 4: {fileID: 400000}
   - 33: {fileID: 3300000}
   - 23: {fileID: 2300000}
-  - 114: {fileID: 11400000}
-  - 114: {fileID: 11400002}
   - 114: {fileID: 11400004}
-  - 114: {fileID: 11400006}
+  - 114: {fileID: 11400002}
+  - 114: {fileID: 11400000}
   m_Layer: 0
-  m_Name: DropCoin
+  m_Name: DropMachineGun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,8 +27,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106709}
-  m_LocalPosition: {x: 4.52584171, y: -.717334926, z: -4.57645798}
-  m_LocalScale: {x: .300000012, y: .0199999996, z: .300000012}
+  m_LocalPosition: {x: 2.0016489, y: 4.47925425, z: -4.78903532}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
 --- !u!23 &2300000
@@ -44,7 +43,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 50d64ff6ebcca4746b19396cb94b3212, type: 2}
+  - {fileID: 2100000, guid: 499d3581ffec649a8bdae782af203499, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -59,7 +58,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: ea37573da40764864856fd68f4379e0f, type: 3}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -68,13 +67,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2059aa760f49b4166abd8c67fb72448d, type: 3}
+  m_Script: {fileID: 11500000, guid: e56e0ae151e5d4f38a725ef8942671a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position: {x: 0, y: 0, z: 0}
-  direction: {x: 0, y: 0, z: 0}
-  height: .100000001
-  radius: .100000001
+  itemPrefab: {fileID: 100000, guid: cd97002db994843b3bba25f7c8168ee4, type: 2}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -95,34 +91,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e56e0ae151e5d4f38a725ef8942671a3, type: 3}
+  m_Script: {fileID: 11500000, guid: 2059aa760f49b4166abd8c67fb72448d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 100000, guid: 7c13dc27fdea82e41a611200ed58e59b, type: 2}
---- !u!114 &11400006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c118f8becda8a4465b7e70eec36c4fb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _name: 
-  texture: {fileID: 0}
-  slotName: 
-  maxDist: 0
-  angle: 0
-  damage: 0
-  dualHand: 0
-  cooldown: 0
-  shieldValue: 0
-  shieldRestoreTime: 0
-  speedChange: 0
-  missilePrefab: {fileID: 0}
-  missileSpeed: 0
+  position: {x: 0, y: 0, z: 0}
+  direction: {x: 0, y: 0, z: 0}
+  height: .100000001
+  radius: .100000001
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

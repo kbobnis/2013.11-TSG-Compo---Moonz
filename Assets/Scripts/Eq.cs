@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Eq : MonoBehaviour 
 {
-	public ArrayList backpack = new ArrayList();
+	public List<GameObject> backpack = new List<GameObject>();
 
 	public GameObject[] backpackFromGui;
 
@@ -27,7 +28,16 @@ public class Eq : MonoBehaviour
 
     // message z dropa
     void AddItemToEq(GameObject tmp) {
-        backpack.Add(tmp);
+        if (tmp.GetComponent<Item>().healing > 0) {
+            GetComponent<Critter>().Heal(tmp.GetComponent<Item>().healing);
+        } else {
+            for(int i=0;i<backpack.Count;++i) {
+                if (backpack[i].GetComponent<Item>().name  == tmp.GetComponent<Item>().name) {
+                    return;
+                }
+            }
+            backpack.Add(tmp);
+        }
     }
 
 	public void Wear(GameObject tmp) {

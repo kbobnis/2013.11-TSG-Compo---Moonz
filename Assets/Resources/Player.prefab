@@ -745,10 +745,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   backpackFromGui:
   - {fileID: 100000, guid: 7c13dc27fdea82e41a611200ed58e59b, type: 2}
-  - {fileID: 100000, guid: 7ca07b33f4c134d52804aedfc6213fe8, type: 2}
-  - {fileID: 100000, guid: cd97002db994843b3bba25f7c8168ee4, type: 2}
-  - {fileID: 100000, guid: 1aa6e01fdc719400fb77331674433096, type: 2}
-  - {fileID: 100000, guid: 4e7e916f44f774b82bdc7c96191e0d1d, type: 2}
   upSlot: {fileID: 0}
   leftSlot: {fileID: 0}
   rightSlot: {fileID: 0}
@@ -778,7 +774,7 @@ MonoBehaviour:
   speed: .360000014
   power: 0
   hp: 50
-  armorValue: .899999976
+  armorValue: 0
   shield: 50
   maxHp: 50
   team: a

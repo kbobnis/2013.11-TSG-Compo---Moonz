@@ -20,17 +20,18 @@ public class ZombieSpawner : MonoBehaviour {
         enemiesPrefabs.Add(Resources.Load("Zombie1", typeof(GameObject)) as GameObject);
         enemiesPrefabs.Add(Resources.Load("ZombieTaran", typeof(GameObject)) as GameObject);
         enemiesPrefabs.Add(Resources.Load("ZombieArcher", typeof(GameObject)) as GameObject);
+        enemiesPrefabs.Add(Resources.Load("Boss", typeof(GameObject)) as GameObject);
     }
     
     void Update () {
         maxTotalEnemiesPower += totalEnemiesPowerGain * Time.deltaTime;
-        enemyPowerGain += enemyPowerGain * Time.deltaTime;
+        maxEnemyPower += enemyPowerGain * Time.deltaTime;
 
         if (Time.time - lastSpawnTime > spawnCooldown) {
             lastSpawnTime = Time.time;
 
-            if (totalEnemiesPower < maxTotalEnemiesPower) {
-               int index = (int)(Random.value * enemiesPrefabs.Count); 
+            for (int i=0; i < 10; ++i) {
+               int index = (int)(Random.value * enemiesPrefabs.Count);
                GameObject enemy = enemiesPrefabs[index] as GameObject;
                float power = enemy.GetComponent<Critter>().power;
                if (power < maxEnemyPower && totalEnemiesPower + power < maxTotalEnemiesPower) {
@@ -66,6 +67,7 @@ public class ZombieSpawner : MonoBehaviour {
     }
 
 	public static void EnemyDead(GameObject gameObject){
+        World.score += gameObject.GetComponent<Critter>().points;
 		ZombieSpawner.totalEnemiesPower -= gameObject.GetComponent<Critter>().power;
 	}
 }

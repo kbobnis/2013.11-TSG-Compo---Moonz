@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxTotalEnemiesPower: 5
-  maxEnemyPower: 10
+  maxEnemyPower: 1
   totalEnemiesPowerGain: .200000003
-  enemyPowerGain: .0199999996
-  spawnCooldown: .100000001
+  enemyPowerGain: .0399999991
+  spawnCooldown: 1

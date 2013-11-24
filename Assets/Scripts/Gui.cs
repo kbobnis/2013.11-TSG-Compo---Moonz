@@ -74,6 +74,8 @@ public class Gui : MonoBehaviour {
 			GUI.DrawTexture(new Rect(offset + x1 + textureWidth + rectW, y1 + 2 * rectW , rectW, rectW), downItem.texture);
 		}
 
+        GUI.Label(new Rect(50, 50, 300, 70), World.score.ToString());
+
 
 	}
 }

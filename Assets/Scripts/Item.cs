@@ -27,6 +27,8 @@ public class Item : MonoBehaviour {
     public GameObject missilePrefab;
     public float missileSpeed;
 
+    public float healing;
+
     void Start () {
     
     }

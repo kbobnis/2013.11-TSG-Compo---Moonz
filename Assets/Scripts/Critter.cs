@@ -11,6 +11,7 @@ public class Critter : MonoBehaviour {
     public float maxHp;
     public string team;
     public float points;
+    public bool shieldActive;
 
     float lastAttackTime;
 
@@ -26,6 +27,10 @@ public class Critter : MonoBehaviour {
     void Update () {
     }
 
+    public void Heal(float a) {
+        hp = Mathf.Min(hp + a, maxHp);
+    }
+
     public float TakeDamage(float dmg)
     {
         if (eq != null) {
@@ -37,7 +42,7 @@ public class Critter : MonoBehaviour {
             dmg = Mathf.Max(0, dmg - totalArmor * dmg);
 
             Item shield = eq.GetShield();
-            if (shield != null) {
+            if (shield != null && shieldActive) {
                 float shieldedDmg = Mathf.Min(this.shield, shield.shieldValue * dmg);
                 dmg = Mathf.Max(0, dmg - shieldedDmg);
                 this.shield = Mathf.Max(0, this.shield - shieldedDmg);

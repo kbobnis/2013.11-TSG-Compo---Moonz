@@ -360,6 +360,7 @@ GameObject:
   - 114: {fileID: 11400004}
   - 114: {fileID: 11400000}
   - 114: {fileID: 11400002}
+  - 114: {fileID: 11400006}
   m_Layer: 0
   m_Name: ZombieTaran
   m_TagString: Untagged
@@ -714,6 +715,24 @@ MonoBehaviour:
   maxHp: 15
   team: b
   points: 100
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100046}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47bd32e27c8eb468d8a80d55aa4292f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dropChance: .5
+  dropsPrefabs:
+  - {fileID: 100000, guid: ee67f364c14054405a48f2a3a0492b2d, type: 2}
+  - {fileID: 100000, guid: ea7bc6d840a714d948237a85f990c55b, type: 2}
+  dropWeights:
+  - 1
+  - .699999988
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1

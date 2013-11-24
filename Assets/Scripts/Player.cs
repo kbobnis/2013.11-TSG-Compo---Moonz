@@ -8,6 +8,7 @@ public class Player : MonoBehaviour {
     protected SP sp;
     protected Critter critter;
     protected Eq eq;
+    public GameObject bubble;
 
     // Use this for initialization
     void Start () {
@@ -15,6 +16,11 @@ public class Player : MonoBehaviour {
         sp = GetComponent<SP>();
         eq = GetComponent<Eq>();
         critter = GetComponent<Critter>();
+
+        bubble = Instantiate(Resources.Load("ShieldBubble")) as GameObject;
+        bubble.transform.parent = transform;
+        bubble.transform.localPosition = new Vector3(0,0.2f,0);
+        bubble.SetActive(false);
     }
 
     // Update is called once per frame
@@ -49,10 +55,16 @@ public class Player : MonoBehaviour {
 				_left = 0;
 			}
 			
-			bool rightChange = Input.GetKeyDown (KeyCode.RightArrow) && Input.GetKey(KeyCode.LeftShift);
+			bool rightChange = Input.GetKeyDown("joystick " + inputSuffix + " button 8") || Input.GetKeyDown (KeyCode.RightArrow) && Input.GetKey(KeyCode.LeftShift);
             if (rightChange){
                 GetComponent<Eq>().ChangeSlot(Item.SLOT_RIGHT);
 				_right = 0;
+            }
+
+            bool shieldToggled= Input.GetKeyDown("joystick " + inputSuffix + " button 12");
+            if (shieldToggled && eq.GetShield() != null) {
+                critter.shieldActive = !critter.shieldActive;
+                bubble.SetActive(critter.shieldActive);
             }
 
 			float h = Input.GetAxis("H"+inputSuffix);
