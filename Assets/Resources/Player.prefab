@@ -682,10 +682,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: .360000014
   power: 0
-  hp: 10
+  hp: 5000
   armorValue: 0
   shield: 0
-  maxHp: 50
+  maxHp: 5000
   team: a
   lastAttackTime: 0
   eq: {fileID: 0}
