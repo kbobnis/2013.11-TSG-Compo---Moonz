@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Critter : MonoBehaviour {
     public float speed;
@@ -13,9 +14,11 @@ public class Critter : MonoBehaviour {
     public float lastAttackTime;
 
     public Eq eq;
+    public SC sc;
 
     void Start () {
         eq = GetComponent<Eq>();
+        sc = GetComponent<SC>();
         lastAttackTime = 0;
     }
     
@@ -47,6 +50,15 @@ public class Critter : MonoBehaviour {
                     } else {
                         GameObject slashFx = Instantiate(Resources.Load("Slash"), transform.localPosition, transform.localRotation) as GameObject;
                         slashFx.transform.parent = transform;
+
+                        List<GameObject> enemies = World.GetOppositeCollection(team);
+                        Vector3 attackDirection = target - sc.position;
+                        for (int i=enemies.Count - 1; i>=0; --i) {
+                            SC enemySc = enemies[i].GetComponent<SC>();
+                            if (sc.GetAngleFromTo(attackDirection, enemySc.position) < weapon.angle && Vector3.Distance(sc.position, enemySc.position) < weapon.maxDist) {
+                                enemies[i].GetComponent<Critter>().TakeDamage(weapon.damage);
+                            }
+                        }
                     }
                     lastAttackTime = Time.time;
                 }

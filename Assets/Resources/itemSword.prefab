@@ -41,9 +41,9 @@ MonoBehaviour:
   _name: 
   texture: {fileID: 2800000, guid: dd5e3247333f0de41bf79058143c3555, type: 3}
   slotName: left
-  maxDist: 50
-  angle: 0
-  damage: 3
+  maxDist: .200000003
+  angle: 90
+  damage: 5
   dualHand: 0
   cooldown: 1
   shieldValue: 0

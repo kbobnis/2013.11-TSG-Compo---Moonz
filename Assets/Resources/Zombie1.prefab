@@ -119,9 +119,10 @@ MonoBehaviour:
   armorValue: 0
   shield: 0
   maxHp: 3
-  team: 0
+  team: b
   lastAttackTime: 0
   eq: {fileID: 0}
+  sc: {fileID: 0}
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1

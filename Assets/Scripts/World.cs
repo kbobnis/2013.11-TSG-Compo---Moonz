@@ -87,6 +87,14 @@ public class World : MonoBehaviour {
         return near;
     }
 
+    public static List<GameObject> GetOppositeCollection(string myTeam) {
+        if (myTeam == "a") {
+            return enemies;
+        } else {
+            return players;
+        }
+    }
+
     public static GameObject GetNearestPlayer(SC sc) {
         return GetNearestInArray(sc, players);
     }

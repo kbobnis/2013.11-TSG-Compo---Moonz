@@ -19,6 +19,11 @@ public class SC : MonoBehaviour {
         return Vector3.Angle(direction, target - position) * sign;
     }
 
+    public float GetAngleFromTo(Vector3 direction, Vector3 target) {
+        float sign = Vector3.Dot(Vector3.Cross(direction, target - position), position) > 0 ? 1 : -1;
+        return Vector3.Angle(direction, target - position) * sign;
+    }
+
     public void RotateBy(float angle) {
         direction = Quaternion.AngleAxis(angle, position) * direction; 
     }
