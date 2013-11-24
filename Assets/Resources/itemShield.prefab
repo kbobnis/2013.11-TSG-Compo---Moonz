@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Shield
-  texture: {fileID: 2800000, guid: 1d218cb7d84ea4c69b1b2fbb233d093c, type: 3}
+  texture: {fileID: 2800000, guid: e487fefd42f1fee499e9b3939c33c39d, type: 3}
   slotName: right
   maxDist: 0
   angle: 0
@@ -48,12 +48,16 @@ MonoBehaviour:
   dualHand: 0
   cooldown: 0
   armorValue: 0
-  shieldValue: 2
+  shieldProtection: 0
   shieldRestoreTime: 1
+  shieldTotalHp: 0
+  shieldHp: 0
   speedChange: 1
+  buffDuration: 0
   missilePrefab: {fileID: 0}
   missileSpeed: 1
   healing: 0
+  perm: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

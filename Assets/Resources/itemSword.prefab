@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Sword
-  texture: {fileID: 2800000, guid: dd5e3247333f0de41bf79058143c3555, type: 3}
+  texture: {fileID: 2800000, guid: 1c93ae4a8ac2fe9498d0c15339d211ae, type: 3}
   slotName: left
   maxDist: .200000003
   angle: 90
@@ -48,12 +48,16 @@ MonoBehaviour:
   dualHand: 0
   cooldown: .200000003
   armorValue: 0
-  shieldValue: 0
+  shieldProtection: 0
   shieldRestoreTime: 0
+  shieldTotalHp: 0
+  shieldHp: 0
   speedChange: 0
+  buffDuration: 0
   missilePrefab: {fileID: 0}
   missileSpeed: 123
   healing: 0
+  perm: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

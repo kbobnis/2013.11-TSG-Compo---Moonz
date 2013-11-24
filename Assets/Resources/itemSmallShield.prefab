@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Small Shield
-  texture: {fileID: 2800000, guid: 3ae1958e3134645278fb90b05c33bf4c, type: 3}
+  texture: {fileID: 2800000, guid: 5995ef71f9089f945875a54bd416cfe9, type: 3}
   slotName: right
   maxDist: 0
   angle: 0
@@ -52,9 +52,11 @@ MonoBehaviour:
   shieldTotalHp: 30
   shieldHp: 30
   speedChange: 0
+  buffDuration: 0
   missilePrefab: {fileID: 100000, guid: c63ff6db32eb944e1aa03b1affe8dfad, type: 2}
   missileSpeed: 0
   healing: 0
+  perm: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

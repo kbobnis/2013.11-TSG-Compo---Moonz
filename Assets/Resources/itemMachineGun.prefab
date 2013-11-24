@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Machine Gun
-  texture: {fileID: 2800000, guid: f48c83616a74b4f12a1ec867cbe460f1, type: 3}
+  texture: {fileID: 2800000, guid: d5edbff57e568b54b8b2cf7388e9a07c, type: 3}
   slotName: left
   maxDist: 4
   angle: 10
@@ -48,12 +48,16 @@ MonoBehaviour:
   dualHand: 0
   cooldown: .100000001
   armorValue: 0
-  shieldValue: 0
+  shieldProtection: 0
   shieldRestoreTime: 0
+  shieldTotalHp: 0
+  shieldHp: 0
   speedChange: 0
+  buffDuration: 0
   missilePrefab: {fileID: 100000, guid: 6784dd79855714ac783f27a243362f5a, type: 2}
   missileSpeed: 2
   healing: 0
+  perm: 0
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

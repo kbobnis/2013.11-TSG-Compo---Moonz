@@ -28,36 +28,21 @@ public class Player : MonoBehaviour {
 
         if (sc && critter) {
             
-			float _up = Input.GetKey(KeyCode.W)?1:0;
-			float _down = Input.GetKey(KeyCode.S)?-1:0;
-			
-			float _left = Input.GetKey(KeyCode.A)?-1:0;
-			float _right = Input.GetKey(KeyCode.D)?1:0;
 			//change backpack
-			bool up = Input.GetKeyDown(KeyCode.UpArrow);
-			if (up)
-			{
-				bool upChange = up && Input.GetKey(KeyCode.LeftShift);
-				if (upChange) {
-					GetComponent<Eq>().ChangeSlot(Item.SLOT_UP);
-					_up = 0;
-				}
+			if (MoonzInput.GetKeyDown(MoonzInput.ARROW_UP, inputSuffix)) {
+                GetComponent<Eq>().ChangeSlot(Item.SLOT_UP);
 			}
 			
-
 			if (MoonzInput.GetKeyDown(MoonzInput.ARROW_DOWN, inputSuffix)){
 				GetComponent<Eq>().ChangeSlot(Item.SLOT_DOWN);
-				_down = 0;
 			}
 
 			if (MoonzInput.GetKeyDown(MoonzInput.ARROW_LEFT, inputSuffix)){
 				GetComponent<Eq>().ChangeSlot(Item.SLOT_LEFT);
-				_left = 0;
 			}
 			
 			if (MoonzInput.GetKeyDown(MoonzInput.ARROW_RIGHT, inputSuffix)){
                 GetComponent<Eq>().ChangeSlot(Item.SLOT_RIGHT);
-				_right = 0;
             }
 
             if (MoonzInput.GetKeyDown(MoonzInput.B, inputSuffix) && eq.GetShield() != null) {
@@ -72,8 +57,8 @@ public class Player : MonoBehaviour {
 				}
 			}
 
-			float h = Input.GetAxis("H"+inputSuffix);
-            float v = Input.GetAxis("V"+inputSuffix);
+			float h = MoonzInput.GetAxis("H",inputSuffix);
+            float v = MoonzInput.GetAxis("V",inputSuffix);
 
             float angle;
             if (Mathf.Abs(h) + Mathf.Abs(v) > 0.5f) {
@@ -84,11 +69,11 @@ public class Player : MonoBehaviour {
                 GetComponent<Animator>().SetInteger("animId", 1);
             }
 
-            sc.MoveForward(  (v + _up + _down)* critter.getSpeed() * Time.deltaTime);
-            sc.MoveSide( (h + _left + _right) * critter.getSpeed() * Time.deltaTime);
-
-            float fh = Input.GetAxis("FH"+inputSuffix);
-            float fv = Input.GetAxis("FV"+inputSuffix);
+			sc.MoveForward(  v * critter.getSpeed() * Time.deltaTime);
+			sc.MoveSide( h * critter.getSpeed() * Time.deltaTime);
+            
+            float fh = MoonzInput.GetAxis("FH",inputSuffix);
+            float fv = MoonzInput.GetAxis("FV",inputSuffix);
             angle = Mathf.Atan2(fh, fv);
 
             if (Mathf.Abs(fh) + Mathf.Abs(fv) > 0.5 ){
@@ -97,7 +82,7 @@ public class Player : MonoBehaviour {
                 sp.rotation = Quaternion.Euler(0, angle * 180 / Mathf.PI, 0);
             }
 
-			if (Input.GetKey(KeyCode.Space) || Input.GetKeyDown("joystick " + inputSuffix + " button 2")) {
+			if (MoonzInput.GetKeyDown(MoonzInput.RB, inputSuffix) || MoonzInput.GetKeyDown(MoonzInput.X, inputSuffix)) {
                 PickDropIfAny();
             }
 

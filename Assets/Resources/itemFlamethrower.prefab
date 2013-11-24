@@ -39,7 +39,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Flamer
-  texture: {fileID: 2800000, guid: 8f1f85c2f8e3241d49b23f4df0430c30, type: 3}
+  texture: {fileID: 2800000, guid: c247873e56b7a814488cab49a65615b8, type: 3}
   slotName: left
   maxDist: .600000024
   angle: 1
@@ -47,12 +47,16 @@ MonoBehaviour:
   dualHand: 0
   cooldown: .0500000007
   armorValue: 0
-  shieldValue: 0
+  shieldProtection: 0
   shieldRestoreTime: 0
+  shieldTotalHp: 0
+  shieldHp: 0
   speedChange: 0
+  buffDuration: 0
   missilePrefab: {fileID: 100000, guid: c63ff6db32eb944e1aa03b1affe8dfad, type: 2}
   missileSpeed: .25
   healing: 0
+  perm: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

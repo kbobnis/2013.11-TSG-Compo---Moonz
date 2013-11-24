@@ -26,6 +26,10 @@ public class World : MonoBehaviour {
     }
     
     void Update () {
+        if (Input.GetKeyDown(KeyCode.M)) {
+            MoonzInput.mode = "mac";
+        }
+
         for (int k=1; k <=2; ++k) {
             string key = k.ToString();
             bool padActive = false;
