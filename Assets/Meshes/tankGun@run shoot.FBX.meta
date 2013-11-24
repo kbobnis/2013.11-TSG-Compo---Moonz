@@ -1,0 +1,155 @@
+fileFormatVersion: 2
+guid: 73c09e7c8b82a41c29e9cffd37cd6857
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: Bone001
+    100002: //RootNode
+    100004: tankLArm1
+    100006: tankLArm2
+    100008: tankLArmCollarbone
+    100010: tankLArmf1
+    100012: tankLArmf1 1
+    100014: tankLArmPalm
+    100016: tankPelvis
+    100018: tankRArm1
+    100020: tankRArm2
+    100022: tankRArmCollarbone
+    100024: tankRArmf1
+    100026: tankRArmf1 1
+    100028: tankRArmPalm
+    100030: tankRibcage001
+    100032: tankSpine
+    400000: Bone001
+    400002: //RootNode
+    400004: tankLArm1
+    400006: tankLArm2
+    400008: tankLArmCollarbone
+    400010: tankLArmf1
+    400012: tankLArmf1 1
+    400014: tankLArmPalm
+    400016: tankPelvis
+    400018: tankRArm1
+    400020: tankRArm2
+    400022: tankRArmCollarbone
+    400024: tankRArmf1
+    400026: tankRArmf1 1
+    400028: tankRArmPalm
+    400030: tankRibcage001
+    400032: tankSpine
+    7400000: run shoot
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: run shoot
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Bone001
+        weight: 1
+      - path: tankPelvis
+        weight: 1
+      - path: tankPelvis/tankSpine
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankLArmCollarbone
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankLArmCollarbone/tankLArm1
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankLArmCollarbone/tankLArm1/tankLArm2
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankLArmCollarbone/tankLArm1/tankLArm2/tankLArmPalm
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankLArmCollarbone/tankLArm1/tankLArm2/tankLArmPalm/tankLArmf1
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankLArmCollarbone/tankLArm1/tankLArm2/tankLArmPalm/tankLArmf1
+          1
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankRArmCollarbone
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankRArmCollarbone/tankRArm1
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankRArmCollarbone/tankRArm1/tankRArm2
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankRArmCollarbone/tankRArm1/tankRArm2/tankRArmPalm
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankRArmCollarbone/tankRArm1/tankRArm2/tankRArmPalm/tankRArmf1
+        weight: 1
+      - path: tankPelvis/tankSpine/tankRibcage001/tankRArmCollarbone/tankRArm1/tankRArm2/tankRArmPalm/tankRArmf1
+          1
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00499999989
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  userData: 
