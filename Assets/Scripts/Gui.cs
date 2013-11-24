@@ -64,6 +64,7 @@ public class Gui : MonoBehaviour {
 		if (rightSlot != null) {
 			Item rightItem = rightSlot.GetComponent<Item>();
 			GUI.DrawTexture(new Rect(offset + x1 + textureWidth + 2 * rectW, y1 + rectW , rectW, rectW), rightItem.texture);
+			GUI.Label(new Rect(offset + x1 + textureWidth + 2 * rectW, y1 + rectW , rectW, rectW), (int)(rightItem.shieldHp) + " /" + (int)(rightItem.shieldTotalHp));
 		}
 
 		//down slot

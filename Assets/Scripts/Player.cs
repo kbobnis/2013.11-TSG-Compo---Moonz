@@ -55,7 +55,7 @@ public class Player : MonoBehaviour {
 				_left = 0;
 			}
 			
-			bool rightChange = Input.GetKeyDown("joystick " + inputSuffix + " button 8") || Input.GetKeyDown (KeyCode.RightArrow) && Input.GetKey(KeyCode.LeftShift);
+			bool rightChange = Input.GetKeyDown("joystick " + inputSuffix + " button 5") || Input.GetKeyDown (KeyCode.RightArrow) && Input.GetKey(KeyCode.LeftShift);
             if (rightChange){
                 GetComponent<Eq>().ChangeSlot(Item.SLOT_RIGHT);
 				_right = 0;
@@ -64,8 +64,8 @@ public class Player : MonoBehaviour {
 			bool shieldToggled= Input.GetKeyDown("joystick " + inputSuffix + " button 12") || Input.GetKeyDown("joystick " + inputSuffix + " button 3");
             if (shieldToggled && eq.GetShield() != null) {
                 critter.shieldActive = !critter.shieldActive;
-                bubble.SetActive(critter.shieldActive);
             }
+            bubble.SetActive(critter.shieldActive && eq.GetShield() != null);
 
 			float h = Input.GetAxis("H"+inputSuffix);
             float v = Input.GetAxis("V"+inputSuffix);

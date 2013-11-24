@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 65d88cf204e764ff5a71f7bd600c4062
+guid: 0c67f2207ba8a439c837b27a43e23aea
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
@@ -70,7 +70,7 @@ ModelImporter:
       name: run no gun
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 12
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

@@ -7,7 +7,6 @@ public class Critter : MonoBehaviour {
     public float power;
     public float hp;
     public float armorValue;
-    public float shield;
     public float maxHp;
     public string team;
     public float points;
@@ -25,6 +24,10 @@ public class Critter : MonoBehaviour {
     }
     
     void Update () {
+        Item shield = eq.GetShield();
+        if (shield != null && !shieldActive) {
+            shield.shieldHp = Mathf.Min(shield.shieldTotalHp, shield.shieldHp + shield.shieldTotalHp * Time.deltaTime / shield.shieldRestoreTime);
+        }
     }
 
     public void Heal(float a) {
@@ -47,10 +50,16 @@ public class Critter : MonoBehaviour {
             dmg = Mathf.Max(0, dmg - totalArmor * dmg);
 
             Item shield = eq.GetShield();
-            if (shield != null && shieldActive) {
-                float shieldedDmg = Mathf.Min(this.shield, shield.shieldValue * dmg);
-                dmg = Mathf.Max(0, dmg - shieldedDmg);
-                this.shield = Mathf.Max(0, this.shield - shieldedDmg);
+            if (shield != null) {
+               if (shieldActive) {
+                    float shieldedDmg = Mathf.Min(shield.shieldHp, shield.shieldProtection * dmg);
+                    dmg = Mathf.Max(0, dmg - shieldedDmg);
+                    shield.shieldHp = Mathf.Max(0, shield.shieldHp - shieldedDmg);
+                    if (shield.shieldHp == 0) {
+                        shieldActive = false;
+                        eq.RemoveItem(shield);
+                    }
+               }
             }
         }
 

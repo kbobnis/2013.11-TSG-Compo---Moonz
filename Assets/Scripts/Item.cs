@@ -20,8 +20,11 @@ public class Item : MonoBehaviour {
 
     public float armorValue;
 
-	public float shieldValue;
+	public float shieldProtection;
 	public float shieldRestoreTime;
+    public float shieldTotalHp;
+    public float shieldHp;
+
 	public float speedChange;
 
     public GameObject missilePrefab;
