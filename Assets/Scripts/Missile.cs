@@ -16,8 +16,9 @@ public class Missile : MonoBehaviour {
     void Update () {
         sc.MoveForward(speed * Time.deltaTime);
 
-        for (int i=World.enemies.Count-1; i>=0; --i) {
-            GameObject enemy = World.enemies[i];
+        List<GameObject> enemies = World.GetOppositeCollection(team);
+        for (int i=enemies.Count-1; i>=0; --i) {
+            GameObject enemy = enemies[i];
             if (sc.IsColliding(enemy)) {
                 float overkill = enemy.GetComponent<Critter>().TakeDamage(dmg);
                 if (overkill <= 0) {
