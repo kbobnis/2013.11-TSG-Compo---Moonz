@@ -19,6 +19,18 @@ public class Eq : MonoBehaviour
 		foreach(var gameObject in backpackFromGui){
 			backpack.Add(gameObject);
 		}
+		if (upSlot != null){
+			backpack.Add(upSlot);
+		}
+		if (leftSlot != null){
+			backpack.Add(leftSlot);
+		}
+		if (rightSlot != null){
+			backpack.Add(rightSlot);
+		}
+		if (downSlot != null){
+			backpack.Add(downSlot);
+		}
 	}
 	
 	// Update is called once per frame
