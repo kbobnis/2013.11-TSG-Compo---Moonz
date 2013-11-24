@@ -803,10 +803,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469d38b6a23072648adbefc2d2502d4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backpack: []
   backpackFromGui:
   - {fileID: 100000, guid: 7c13dc27fdea82e41a611200ed58e59b, type: 2}
   upSlot: {fileID: 0}
-  leftSlot: {fileID: 0}
+  leftSlot: {fileID: 100000, guid: 4e7e916f44f774b82bdc7c96191e0d1d, type: 2}
   rightSlot: {fileID: 0}
   downSlot: {fileID: 0}
 --- !u!114 &11400002
@@ -839,6 +840,7 @@ MonoBehaviour:
   maxHp: 50
   team: a
   points: 0
+  shieldActive: 0
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -851,6 +853,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputSuffix: 
+  bubble: {fileID: 0}
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -23,6 +23,7 @@ public class GrenadeMissile : Missile {
                     enemy.GetComponent<Critter>().TakeDamage(dmg);
                 }
             }
+            Camera.main.GetComponent<Cam>().Shake();
             World.RemoveMissile(gameObject);
             GameObject bigBoom = Instantiate(Resources.Load("BigBoom")) as GameObject;
             bigBoom.transform.localPosition = gameObject.transform.localPosition;
