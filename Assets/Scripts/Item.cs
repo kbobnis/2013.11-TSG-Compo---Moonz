@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class Item : MonoBehaviour {
@@ -17,7 +17,6 @@ public class Item : MonoBehaviour {
 	public float damage;
 	public bool dualHand;
 	public float cooldown;
-	private float cooldownLeft;
     
 	public float armorValue;
 

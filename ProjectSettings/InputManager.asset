@@ -85,7 +85,7 @@ InputManager:
     axis: 5
     joyNum: 1
   - serializedVersion: 3
-    m_Name: ChooseItemY2
+    m_Name: ChooseItemY1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 

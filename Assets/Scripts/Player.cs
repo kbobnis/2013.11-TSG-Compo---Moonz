@@ -44,8 +44,8 @@ public class Player : MonoBehaviour {
 				}
 			}
 			
-			bool downChange = Input.GetKeyDown("joystick " + inputSuffix + " button 6") || (Input.GetKeyDown(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftShift));
-			if (downChange){
+
+			if (MoonzInput.GetKeyDown(MoonzInput.ARROW_DOWN, inputSuffix)){
 				GetComponent<Eq>().ChangeSlot(Item.SLOT_DOWN);
 				_down = 0;
 			}
@@ -66,14 +66,11 @@ public class Player : MonoBehaviour {
             bubble.SetActive(critter.shieldActive && eq.GetShield() != null);
 
 			if (MoonzInput.GetKeyDown(MoonzInput.A, inputSuffix) ){
-				Item buff = eq.GetBuff();
-				if (buff != null){
-					critter.UseBuff(buff);
-					eq.RemoveItem(buff);
+				if (eq.downSlot != null){
+					critter.UseBuff(eq.downSlot);
+					eq.RemoveItem(eq.downSlot.GetComponent<Item>());
 				}
 			}
-
-
 
 			float h = Input.GetAxis("H"+inputSuffix);
             float v = Input.GetAxis("V"+inputSuffix);
@@ -87,21 +84,15 @@ public class Player : MonoBehaviour {
                 GetComponent<Animator>().SetInteger("animId", 1);
             }
 
-            sc.MoveForward(  (v + _up + _down)* critter.speed * critter.buffSpeed * Time.deltaTime);
-            sc.MoveSide( (h + _left + _right) * critter.speed * critter.buffSpeed * Time.deltaTime);
+            sc.MoveForward(  (v + _up + _down)* critter.getSpeed() * Time.deltaTime);
+            sc.MoveSide( (h + _left + _right) * critter.getSpeed() * Time.deltaTime);
 
             float fh = Input.GetAxis("FH"+inputSuffix);
             float fv = Input.GetAxis("FV"+inputSuffix);
             angle = Mathf.Atan2(fh, fv);
 
-			float upShot = Input.GetKey(KeyCode.UpArrow)?1:0;
-			float downShot = Input.GetKey(KeyCode.DownArrow)?-1:0;
-
-			float leftShot = Input.GetKey(KeyCode.LeftArrow)?-1:0;
-			float rightShot = Input.GetKey(KeyCode.RightArrow)?1:0;
-
-            if (Mathf.Abs(fh) + Mathf.Abs(fv) > 0.5 || leftShot != 0 || rightShot != 0 || upShot != 0 || downShot != 0){
-                Vector3 shootDirection = Camera.main.transform.up * (fv +upShot + downShot)+ Camera.main.transform.right * (fh + leftShot + rightShot);
+            if (Mathf.Abs(fh) + Mathf.Abs(fv) > 0.5 ){
+                Vector3 shootDirection = Camera.main.transform.up * fv + Camera.main.transform.right * fh ;
                 critter.Attack(sc.position + shootDirection);
                 sp.rotation = Quaternion.Euler(0, angle * 180 / Mathf.PI, 0);
             }
@@ -117,6 +108,7 @@ public class Player : MonoBehaviour {
         GameObject dropObj = World.GetNearestDrop(sc);
         if (dropObj != null && sc.IsColliding(dropObj)) {
             Drop drop = dropObj.GetComponent<Drop>();
+			Debug.Log("taking drop");
             if (drop.itemPrefab != null) {
                 SendMessage("AddItemToEq", Instantiate(drop.itemPrefab));
             }

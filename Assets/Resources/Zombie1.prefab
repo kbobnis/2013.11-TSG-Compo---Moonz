@@ -124,7 +124,6 @@ MonoBehaviour:
   team: b
   points: 10
   shieldActive: 0
-  buffSpeed: 0
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -147,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47bd32e27c8eb468d8a80d55aa4292f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropChance: .07
+  dropChance: .699999988
   dropsPrefabs:
   - {fileID: 100000, guid: 58f01b0d204aa4672a11c97f7d3787aa, type: 2}
   - {fileID: 100000, guid: ee67f364c14054405a48f2a3a0492b2d, type: 2}

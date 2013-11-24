@@ -13,8 +13,6 @@ public class Critter : MonoBehaviour {
     public bool shieldActive;
 
 	private float lastAttackTime;
-    private float buffDuration;
-    public float buffSpeed;
 
 	private ArrayList activeBuffs = new ArrayList();
 
@@ -25,7 +23,6 @@ public class Critter : MonoBehaviour {
         eq = GetComponent<Eq>();
         sc = GetComponent<SC>();
         lastAttackTime = 0;
-        buffSpeed = 1;
     }
     
     void Update () {
@@ -34,13 +31,31 @@ public class Critter : MonoBehaviour {
             shield.shieldHp = Mathf.Min(shield.shieldTotalHp, shield.shieldHp + shield.shieldTotalHp * Time.deltaTime / shield.shieldRestoreTime);
         }
 
-        if (buffDuration > 0) {
-            buffDuration -= Time.deltaTime;
-            if (buffDuration <= 0) {
-                buffSpeed = 1;
-            }
-        }
+		for(int i=activeBuffs.Count-1; i >= 0; i --){
+			GameObject gameObjectBuff = activeBuffs[i] as GameObject;
+			Item buff = gameObjectBuff.GetComponent<Item>();
+			buff.cooldown -= Time.deltaTime;
+
+			if (buff.cooldown <= 0){
+				activeBuffs.Remove(gameObjectBuff);
+				Destroy(gameObjectBuff);
+			}
+		}
     }
+
+	public float getSpeed(){
+		float actualSpeed = this.speed;
+
+		for(int i=activeBuffs.Count-1; i >= 0; i--){
+			GameObject tmp = this.activeBuffs[i] as GameObject;
+			if (tmp != null){
+				Item tempBuff = tmp.GetComponent<Item>();
+				actualSpeed *= tempBuff.speedChange;
+			}
+		}
+		return actualSpeed;
+	}
+
 
     public void Heal(float a) {
         hp = Mathf.Min(hp + a, maxHp);
@@ -59,6 +74,11 @@ public class Critter : MonoBehaviour {
             if (armor != null) {
                 totalArmor += armor.armorValue;
             }
+			foreach(GameObject tmp in this.activeBuffs) {
+				Item tempBuff = tmp.GetComponent<Item>();
+				totalArmor += tempBuff.armorValue;
+			}
+
             dmg = Mathf.Max(0, dmg - totalArmor * dmg);
 
             Item shield = eq.GetShield();
@@ -117,6 +137,15 @@ public class Critter : MonoBehaviour {
             Item weapon = eq.GetWeapon();
 
             if (weapon != null) {
+				float buffSpeed = 1f;
+				for(int i=this.activeBuffs.Count-1; i >=0; i--) {
+					GameObject buffItem = this.activeBuffs[i] as GameObject;
+					if (buffItem != null){
+						Item buffItemTmp = buffItem.GetComponent<Item>();
+						buffSpeed *= buffItemTmp.speedChange;
+					}
+				}
+
                 if (Time.time - lastAttackTime > weapon.cooldown / buffSpeed) {
 					GameObject leftSlot = eq.leftSlot;
 					Sounds sounds = leftSlot.GetComponent<Sounds>();
@@ -141,7 +170,13 @@ public class Critter : MonoBehaviour {
                         for (int i=enemies.Count - 1; i>=0; --i) {
                             SC enemySc = enemies[i].GetComponent<SC>();
                             if (sc.GetAngleFromTo(attackDirection, enemySc.position) < weapon.angle && Vector3.Distance(sc.position, enemySc.position) < weapon.maxDist) {
-                                enemies[i].GetComponent<Critter>().TakeDamage(weapon.damage);
+
+								float buffDamage = 0f;
+								foreach(GameObject gameBuff in this.activeBuffs){
+									Item buffItem = gameBuff.GetComponent<Item>();
+									buffDamage += buffItem.damage;
+								}
+                                enemies[i].GetComponent<Critter>().TakeDamage(weapon.damage + buffDamage);
                             }
                         }
                     }

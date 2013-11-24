@@ -60,7 +60,7 @@ MonoBehaviour:
   angle: 0
   damage: 0
   dualHand: 0
-  cooldown: 0
+  cooldown: 5
   armorValue: 0
   shieldProtection: 0
   shieldRestoreTime: 0
@@ -71,6 +71,7 @@ MonoBehaviour:
   missilePrefab: {fileID: 0}
   missileSpeed: 0
   healing: 0
+  perm: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -38,22 +38,21 @@ public class Eq : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 
     // message z dropa
     void AddItemToEq(GameObject tmp) {
-        /*if (tmp.GetComponent<Item>().healing > 0) {
-            GetComponent<Critter>().Heal(tmp.GetComponent<Item>().healing);
-        } else */{
-            for(int i=0;i<backpack.Count;++i) {
-                if (backpack[i].GetComponent<Item>().name  == tmp.GetComponent<Item>().name) {
-                    return;
-                }
-            }
-
-			WearIfEmpty(tmp);
-        }
+	    
+		for(int i=backpack.Count-1; i >= 0; i--) {
+			if (backpack[i] != null){
+				Item backpackItem = backpack[i].GetComponent<Item>();
+				Item componentItem = tmp.GetComponent<Item>();
+		        if (backpackItem.name  == componentItem.name && componentItem.slotName != Item.SLOT_DOWN) {
+		            return;
+		        }
+			}
+	    }
+		Wear(tmp);
     }
 
     public void RemoveItem(Item what) {
@@ -105,7 +104,6 @@ public class Eq : MonoBehaviour
 	public void Wear(GameObject what) {
 		Item item = what.GetComponent<Item>();
 		
-		
 		switch(item.slotName){
 			case Item.SLOT_UP:
 				upSlot = what;
@@ -149,13 +147,6 @@ public class Eq : MonoBehaviour
         if (rightSlot != null) {
             return rightSlot.GetComponent<Item>();
         }
-        return null;
-    }
-
-    public Item GetBuff() {
-        if (downSlot != null) {
-            return downSlot.GetComponent<Item>();
-        } 
         return null;
     }
 
