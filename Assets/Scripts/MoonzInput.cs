@@ -51,6 +51,8 @@ public class MoonzInput
 		else{
         	if (keyCode == ARROW_UP) return Input.GetKeyDown("joystick "+inputSuffix+" button 5");
 			if (keyCode == ARROW_DOWN) return Input.GetKeyDown("joystick "+inputSuffix+" button 6");
+        	if (keyCode == ARROW_LEFT) return Input.GetKeyDown("joystick "+inputSuffix+" button 7");
+			if (keyCode == ARROW_RIGHT) return Input.GetKeyDown("joystick "+inputSuffix+" button 8");
 			if (keyCode == A) return Input.GetKeyDown("joystick "+inputSuffix+" button 16");
 			if (keyCode == B) return Input.GetKeyDown("joystick "+inputSuffix+" button 17");
 			if (keyCode == C) return Input.GetKeyDown("joystick "+inputSuffix+" button 18");
