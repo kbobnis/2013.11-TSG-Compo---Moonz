@@ -24,21 +24,29 @@ public class GrenadeMissile : Missile {
                 }
             }
             Camera.main.GetComponent<Cam>().Shake();
-            World.RemoveMissile(gameObject);
+
+			if (sounds != null){
+				this.sounds.dieSound(gameObject);
+			}
+			World.RemoveMissile(gameObject);
             GameObject bigBoom = Instantiate(Resources.Load("BigBoom")) as GameObject;
             bigBoom.transform.localPosition = gameObject.transform.localPosition;
             bigBoom.transform.localRotation = gameObject.transform.localRotation;
             Destroy(bigBoom, 1);
+
+
         } else {
             life -= Time.deltaTime;
         }
     }
 
-    override public void SetParamsFromWeapon(Item weapon) {
+    override public void SetParamsFromWeapon(GameObject gameObjectWeapon) {
+		Item weapon = gameObjectWeapon.GetComponent<Item>();
         speed = weapon.missileSpeed;
         dmg = weapon.damage;
         life = weapon.maxDist / weapon.missileSpeed;
         totalLife = life;
+		this.sounds = gameObjectWeapon.GetComponent<Sounds>();
     }
 }
 

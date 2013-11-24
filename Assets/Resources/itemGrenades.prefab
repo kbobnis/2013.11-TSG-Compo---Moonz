@@ -48,8 +48,10 @@ MonoBehaviour:
   dualHand: 0
   cooldown: 2
   armorValue: 0
-  shieldValue: 0
+  shieldProtection: 0
   shieldRestoreTime: 0
+  shieldTotalHp: 0
+  shieldHp: 0
   speedChange: 0
   missilePrefab: {fileID: 100000, guid: a701d850214784b73a86bf76299464b6, type: 2}
   missileSpeed: 1
@@ -65,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2b60d7efd319a447a55699c79521442, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  death: {fileID: 0}
+  death: {fileID: 8300000, guid: 4b0d5d7e5ae89944185edc85affc9e42, type: 3}
   gotHit: {fileID: 0}
   spawn: {fileID: 8300000, guid: 114346a16fdf17d43902a0af21c4998b, type: 3}
 --- !u!1001 &100100000

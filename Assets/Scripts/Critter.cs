@@ -97,7 +97,7 @@ public class Critter : MonoBehaviour {
 
                     if (weapon.missilePrefab != null) {
                         GameObject missileObj = Instantiate(weapon.missilePrefab) as GameObject;
-                        missileObj.GetComponent<Missile>().SetParamsFromWeapon(weapon);
+                        missileObj.GetComponent<Missile>().SetParamsFromWeapon(eq.leftSlot);
                         missileObj.GetComponent<Missile>().team = team;
                         missileObj.GetComponent<SC>().SetPosition(GetComponent<SC>().position);
                         missileObj.GetComponent<SC>().SetDirectionTo(target);

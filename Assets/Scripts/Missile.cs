@@ -6,10 +6,12 @@ public class Missile : MonoBehaviour {
 
     protected SC sc;
     protected SP sp;
-    public float speed;
+	protected Sounds sounds; 
+	public float speed;
     public float dmg;
     public float life;
     public string team;
+
 
     void Start () {
         sc = GetComponent<SC>();
@@ -33,13 +35,16 @@ public class Missile : MonoBehaviour {
 
         life -= Time.deltaTime;
         if (life < 0) {
+
             World.RemoveMissile(gameObject);
         }
     }
 
-    public virtual void SetParamsFromWeapon(Item weapon) {
+    public virtual void SetParamsFromWeapon(GameObject gameObjectWeapon) {
+		Item weapon = gameObjectWeapon.GetComponent<Item>() as Item;
         speed = weapon.missileSpeed;
         dmg = weapon.damage;
         life = weapon.maxDist / weapon.missileSpeed;
+		sounds = gameObjectWeapon.GetComponent<Sounds>();
     }
 }
