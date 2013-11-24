@@ -43,9 +43,9 @@ public class Eq : MonoBehaviour
 
     // message z dropa
     void AddItemToEq(GameObject tmp) {
-        if (tmp.GetComponent<Item>().healing > 0) {
+        /*if (tmp.GetComponent<Item>().healing > 0) {
             GetComponent<Critter>().Heal(tmp.GetComponent<Item>().healing);
-        } else {
+        } else */{
             for(int i=0;i<backpack.Count;++i) {
                 if (backpack[i].GetComponent<Item>().name  == tmp.GetComponent<Item>().name) {
                     return;
@@ -134,6 +134,13 @@ public class Eq : MonoBehaviour
         }
         return null;
     }
+
+	public Item GetBuff(){
+		if (downSlot != null){
+			return downSlot.GetComponent<Item>();
+		}
+		return null;
+	}
 
     public Item GetShield() {
         if (rightSlot != null) {

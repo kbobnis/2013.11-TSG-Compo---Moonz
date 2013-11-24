@@ -65,6 +65,14 @@ public class Player : MonoBehaviour {
             }
             bubble.SetActive(critter.shieldActive && eq.GetShield() != null);
 
+			if (MoonzInput.GetKeyDown(MoonzInput.A, inputSuffix) ){
+				Item buff = eq.GetBuff();
+				if (buff != null){
+					critter.UseBuff(buff);
+				}
+			}
+
+
 			float h = Input.GetAxis("H"+inputSuffix);
             float v = Input.GetAxis("V"+inputSuffix);
 

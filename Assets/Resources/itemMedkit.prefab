@@ -40,15 +40,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Medkit
   texture: {fileID: 2800000, guid: 01f4cc851cf614b4db89083540b88923, type: 3}
-  slotName: left
+  slotName: down
   maxDist: .600000024
   angle: 1
   damage: 1
   dualHand: 0
   cooldown: .0500000007
   armorValue: 0
-  shieldValue: 0
+  shieldProtection: 0
   shieldRestoreTime: 0
+  shieldTotalHp: 0
+  shieldHp: 0
   speedChange: 0
   missilePrefab: {fileID: 100000, guid: c63ff6db32eb944e1aa03b1affe8dfad, type: 2}
   missileSpeed: .25

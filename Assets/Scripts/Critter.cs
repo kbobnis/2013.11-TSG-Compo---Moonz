@@ -14,6 +14,8 @@ public class Critter : MonoBehaviour {
 
 	private float lastAttackTime;
 
+	private ArrayList activeBuffs = new ArrayList();
+
     Eq eq;
     SC sc;
 
@@ -81,6 +83,23 @@ public class Critter : MonoBehaviour {
         }
         return overkill;
     }
+
+	public void UseBuff(GameObject buff){
+		if (buff != null)
+		{
+			Item buffItem = buff.GetComponent<Item>();
+			if (buffItem.perm) {
+				speed += buffItem.speedChange;
+				armorValue += buffItem.armorValue;
+				hp += buffItem.healing;
+				Destroy(buff);
+			}
+			else {
+				this.activeBuffs.Add(buff);
+			}
+		}
+	}
+
 
 
     public void Attack(Vector3 target) {

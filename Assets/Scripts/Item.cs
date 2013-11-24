@@ -17,8 +17,9 @@ public class Item : MonoBehaviour {
 	public float damage;
 	public bool dualHand;
 	public float cooldown;
-
-    public float armorValue;
+	private float cooldownLeft;
+    
+	public float armorValue;
 
 	public float shieldProtection;
 	public float shieldRestoreTime;
@@ -32,6 +33,9 @@ public class Item : MonoBehaviour {
 
     public float healing;
 
+	public bool perm;
+
+
     void Start () {
     
     }
@@ -39,4 +43,5 @@ public class Item : MonoBehaviour {
     void Update () {
     
     }
+
 }
