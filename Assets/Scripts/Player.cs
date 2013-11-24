@@ -61,7 +61,7 @@ public class Player : MonoBehaviour {
 				_right = 0;
             }
 
-            bool shieldToggled= Input.GetKeyDown("joystick " + inputSuffix + " button 12");
+			bool shieldToggled= Input.GetKeyDown("joystick " + inputSuffix + " button 12") || Input.GetKeyDown("joystick " + inputSuffix + " button 3");
             if (shieldToggled && eq.GetShield() != null) {
                 critter.shieldActive = !critter.shieldActive;
                 bubble.SetActive(critter.shieldActive);
@@ -89,7 +89,7 @@ public class Player : MonoBehaviour {
                 sp.rotation = Quaternion.Euler(0, angle * 180 / Mathf.PI, 0);
             }
 
-            if (Input.GetButtonDown("PickItem") || Input.GetKey(KeyCode.Space)) {
+			if (Input.GetButtonDown("PickItem") || Input.GetKey(KeyCode.Space) || Input.GetKeyDown("joystick " + inputSuffix + " button 2")) {
                 PickDropIfAny();
             }
 

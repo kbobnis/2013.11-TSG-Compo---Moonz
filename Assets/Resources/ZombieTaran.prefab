@@ -680,6 +680,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469d38b6a23072648adbefc2d2502d4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backpack: []
   backpackFromGui: []
   upSlot: {fileID: 0}
   leftSlot: {fileID: 100000, guid: 7c13dc27fdea82e41a611200ed58e59b, type: 2}
@@ -715,6 +716,7 @@ MonoBehaviour:
   maxHp: 15
   team: b
   points: 100
+  shieldActive: 0
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
