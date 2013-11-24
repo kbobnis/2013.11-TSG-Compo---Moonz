@@ -892,7 +892,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   death: {fileID: 8300000, guid: efa845b88d2e9c94fa7b1db84addb2aa, type: 3}
-  gotHit: {fileID: 8300000, guid: 7833753f06c7131448d88713151a2907, type: 3}
+  gotHit: {fileID: 8300000, guid: c97913aefeb01a64090819cdc6850f65, type: 3}
   spawn: {fileID: 0}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
