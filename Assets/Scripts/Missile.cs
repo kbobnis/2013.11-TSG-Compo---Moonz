@@ -7,6 +7,7 @@ public class Missile : MonoBehaviour {
     public float speed;
     public float dmg;
     public float life;
+    public string team;
 
     void Start () {
         sc = GetComponent<SC>();

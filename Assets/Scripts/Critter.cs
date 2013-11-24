@@ -8,6 +8,7 @@ public class Critter : MonoBehaviour {
     public float armorValue;
     public float shield;
     public float maxHp;
+    public string team;
 
     public float lastAttackTime;
 
@@ -36,15 +37,16 @@ public class Critter : MonoBehaviour {
             Item weapon = eq.GetWeapon();
             if (weapon != null) {
                 if (Time.time - lastAttackTime > weapon.cooldown) {
-                    Debug.Log("HERE " + weapon.missileSpeed * 100);
                     if (weapon.missilePrefab != null) {
                         GameObject missileObj = Instantiate(weapon.missilePrefab) as GameObject;
                         missileObj.GetComponent<Missile>().SetParamsFromWeapon(weapon);
+                        missileObj.GetComponent<Missile>().team = team;
                         missileObj.GetComponent<SC>().SetPosition(GetComponent<SC>().position);
                         missileObj.GetComponent<SC>().SetDirectionTo(target);
                         World.AddMissile(missileObj);
                     } else {
-                        // ciach, natychmiast dmg w obszarze
+                        GameObject slashFx = Instantiate(Resources.Load("Slash"), transform.localPosition, transform.localRotation) as GameObject;
+                        slashFx.transform.parent = transform;
                     }
                     lastAttackTime = Time.time;
                 }
