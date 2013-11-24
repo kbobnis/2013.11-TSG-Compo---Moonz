@@ -45,7 +45,7 @@ MonoBehaviour:
   angle: 90
   damage: 5
   dualHand: 0
-  cooldown: 1
+  cooldown: .200000003
   shieldValue: 0
   shieldRestoreTime: 0
   speedChange: 0

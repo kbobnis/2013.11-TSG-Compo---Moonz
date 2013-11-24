@@ -43,9 +43,9 @@ MonoBehaviour:
   slotName: left
   maxDist: 3
   angle: 5
-  damage: 1
+  damage: 2
   dualHand: 0
-  cooldown: .200000003
+  cooldown: .300000012
   shieldValue: 0
   shieldRestoreTime: 0
   speedChange: 0

@@ -43,7 +43,7 @@ public class Player : MonoBehaviour {
 				_down = 0;
 			}
 			
-			bool leftChange = Input.GetKeyDown (KeyCode.LeftArrow) &&Input.GetKey(KeyCode.LeftShift);
+			bool leftChange = Input.GetKeyDown("joystick " + inputSuffix + " button 7") || (Input.GetKeyDown (KeyCode.LeftArrow) &&Input.GetKey(KeyCode.LeftShift));
 			if (leftChange){
 				GetComponent<Eq>().ChangeSlot(Item.SLOT_LEFT);
 				_left = 0;
@@ -61,13 +61,10 @@ public class Player : MonoBehaviour {
             sc.MoveForward(  (v + _up + _down)* critter.speed * Time.deltaTime);
             sc.MoveSide( (h + _left + _right) * critter.speed * Time.deltaTime);
 
-            float angle = Mathf.Atan2(h, v);
-            sp.rotation = Quaternion.Euler(0, angle * 180 / Mathf.PI, 0);
-            if (Mathf.Abs(h) + Mathf.Abs(v) > 0.1) {
-            }
-
             float fh = Input.GetAxis("FH"+inputSuffix);
             float fv = Input.GetAxis("FV"+inputSuffix);
+            float angle = Mathf.Atan2(fh, fv);
+            sp.rotation = Quaternion.Euler(0, angle * 180 / Mathf.PI, 0);
 
 			float upShot = Input.GetKey(KeyCode.UpArrow)?1:0;
 			float downShot = Input.GetKey(KeyCode.DownArrow)?-1:0;
