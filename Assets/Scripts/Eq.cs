@@ -66,6 +66,9 @@ public class Eq : MonoBehaviour
         if (what == GetArmor()) {
             upSlot = null;
         }
+        if (what == GetBuff()) {
+            downSlot = null;
+        }
         for(int i=0;i<backpack.Count;++i) {
             if (backpack[i].GetComponent<Item>().name  == what.name) {
                 backpack.RemoveAt(i);
@@ -146,6 +149,13 @@ public class Eq : MonoBehaviour
         if (rightSlot != null) {
             return rightSlot.GetComponent<Item>();
         }
+        return null;
+    }
+
+    public Item GetBuff() {
+        if (downSlot != null) {
+            return downSlot.GetComponent<Item>();
+        } 
         return null;
     }
 
