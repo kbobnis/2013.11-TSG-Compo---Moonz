@@ -34,18 +34,12 @@ public class Player : MonoBehaviour {
 			float _left = Input.GetKey(KeyCode.A)?-1:0;
 			float _right = Input.GetKey(KeyCode.D)?1:0;
 			//change backpack
-			bool up = Input.GetKeyDown(KeyCode.UpArrow);
-			if (up)
-			{
-				bool upChange = up && Input.GetKey(KeyCode.LeftShift);
-				if (upChange) {
-					GetComponent<Eq>().ChangeSlot(Item.SLOT_UP);
-					_up = 0;
-				}
+			if (MoonzInput.GetKeyDown(MoonzInput.ARROW_UP, inputSuffix)) {
+                GetComponent<Eq>().ChangeSlot(Item.SLOT_UP);
+                _up = 0;
 			}
 			
-			bool downChange = Input.GetKeyDown("joystick " + inputSuffix + " button 6") || (Input.GetKeyDown(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftShift));
-			if (downChange){
+			if (MoonzInput.GetKeyDown(MoonzInput.ARROW_DOWN, inputSuffix)){
 				GetComponent<Eq>().ChangeSlot(Item.SLOT_DOWN);
 				_down = 0;
 			}
@@ -72,9 +66,8 @@ public class Player : MonoBehaviour {
                 eq.RemoveItem(buff);
             }
 
-
-			float h = Input.GetAxis("H"+inputSuffix);
-            float v = Input.GetAxis("V"+inputSuffix);
+			float h = MoonzInput.GetAxis("H",inputSuffix);
+            float v = MoonzInput.GetAxis("V",inputSuffix);
 
             float angle;
             if (Mathf.Abs(h) + Mathf.Abs(v) > 0.5f) {
@@ -88,8 +81,8 @@ public class Player : MonoBehaviour {
             sc.MoveForward(  (v + _up + _down)* critter.speed * critter.buffSpeed * Time.deltaTime);
             sc.MoveSide( (h + _left + _right) * critter.speed * critter.buffSpeed * Time.deltaTime);
 
-            float fh = Input.GetAxis("FH"+inputSuffix);
-            float fv = Input.GetAxis("FV"+inputSuffix);
+            float fh = MoonzInput.GetAxis("FH",inputSuffix);
+            float fv = MoonzInput.GetAxis("FV",inputSuffix);
             angle = Mathf.Atan2(fh, fv);
 
 			float upShot = Input.GetKey(KeyCode.UpArrow)?1:0;
@@ -104,7 +97,7 @@ public class Player : MonoBehaviour {
                 sp.rotation = Quaternion.Euler(0, angle * 180 / Mathf.PI, 0);
             }
 
-			if (Input.GetKey(KeyCode.Space) || Input.GetKeyDown("joystick " + inputSuffix + " button 2")) {
+			if (MoonzInput.GetKeyDown(MoonzInput.RB, inputSuffix)) {
                 PickDropIfAny();
             }
 
