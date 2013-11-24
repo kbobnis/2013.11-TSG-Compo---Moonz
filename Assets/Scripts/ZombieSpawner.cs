@@ -17,6 +17,7 @@ public class ZombieSpawner : MonoBehaviour {
 
     public static int currentWaveId;
     public static int numEnemiesLeft;
+    public static bool keepCalmAndWaitForNextWave;
 
     void Start () {
         totalEnemiesPower = 0;
@@ -86,6 +87,16 @@ public class ZombieSpawner : MonoBehaviour {
         if (currentWaveId != waves.Count - 1) {
             currentWaveId++;
             numEnemiesLeft = waves[currentWaveId].Count;
+            keepCalmAndWaitForNextWave = false;
+        }
+    }
+
+    void OnGUI() {
+        if (keepCalmAndWaitForNextWave) {
+            GUI.Label(new Rect(Screen.width*0.25f, Screen.height*0.25f, Screen.width*0.75f, Screen.height*0.75f), "<size=40>Get ready! Wave " + (currentWaveId+2)+"</size>");
+        }
+        if (numEnemiesLeft >= 0) {
+            GUI.Label(new Rect(0.01f*Screen.width, 0.15f*Screen.height, 0.3f*Screen.width, 0.1f*Screen.height), "Left: " + numEnemiesLeft);
         }
     }
 
@@ -95,6 +106,7 @@ public class ZombieSpawner : MonoBehaviour {
             Debug.Log("WaveDone");
             Invoke("NextWave", 5);
             numEnemiesLeft = -1;
+            keepCalmAndWaitForNextWave = true;
         } else {
             if (waves[currentWaveId].Count > 0) {
                 if (Time.time - lastSpawnTime > spawnCooldown) {
