@@ -50,7 +50,7 @@ InputManager:
     snap: 0
     invert: 0
     type: 2
-    axis: 2
+    axis: 3
     joyNum: 1
   - serializedVersion: 3
     m_Name: FV1
@@ -66,10 +66,10 @@ InputManager:
     snap: 0
     invert: 1
     type: 2
-    axis: 3
+    axis: 4
     joyNum: 1
   - serializedVersion: 3
-    m_Name: PickItem
+    m_Name: ChooseItemX1
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -81,11 +81,11 @@ InputManager:
     sensitivity: 1000
     snap: 0
     invert: 0
-    type: 0
-    axis: 0
-    joyNum: 0
+    type: 2
+    axis: 5
+    joyNum: 1
   - serializedVersion: 3
-    m_Name: Jump
+    m_Name: ChooseItemY2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -97,9 +97,9 @@ InputManager:
     sensitivity: 1000
     snap: 0
     invert: 0
-    type: 0
-    axis: 0
-    joyNum: 0
+    type: 2
+    axis: 6
+    joyNum: 1
   - serializedVersion: 3
     m_Name: Mouse X
     descriptiveName: 
@@ -194,7 +194,7 @@ InputManager:
     snap: 0
     invert: 0
     type: 2
-    axis: 2
+    axis: 3
     joyNum: 2
   - serializedVersion: 3
     m_Name: FV2
@@ -210,10 +210,10 @@ InputManager:
     snap: 0
     invert: 1
     type: 2
-    axis: 3
+    axis: 4
     joyNum: 2
   - serializedVersion: 3
-    m_Name: Fire3
+    m_Name: ChooseItemX2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -225,11 +225,11 @@ InputManager:
     sensitivity: 1000
     snap: 0
     invert: 0
-    type: 0
-    axis: 0
-    joyNum: 0
+    type: 2
+    axis: 5
+    joyNum: 2
   - serializedVersion: 3
-    m_Name: Jump
+    m_Name: ChooseItemY2
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
@@ -241,6 +241,6 @@ InputManager:
     sensitivity: 1000
     snap: 0
     invert: 0
-    type: 0
-    axis: 0
-    joyNum: 0
+    type: 2
+    axis: 6
+    joyNum: 2
