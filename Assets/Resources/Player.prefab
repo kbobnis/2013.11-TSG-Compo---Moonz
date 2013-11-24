@@ -751,7 +751,7 @@ Animator:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100048}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 1b78a6119316045719360840b0e4272c, type: 3}
+  m_Avatar: {fileID: 9000000, guid: 248441c588f4a4f4aa0852f013332f31, type: 3}
   m_Controller: {fileID: 9100000, guid: d9f242a783849455fbe5f8de5faeeeee, type: 2}
   m_CullingMode: 1
   m_ApplyRootMotion: 1
@@ -836,7 +836,6 @@ MonoBehaviour:
   power: 0
   hp: 50
   armorValue: 0
-  shield: 50
   maxHp: 50
   team: a
   points: 0
@@ -919,7 +918,7 @@ SkinnedMeshRenderer:
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
-  m_Mesh: {fileID: 4300000, guid: 1b78a6119316045719360840b0e4272c, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 248441c588f4a4f4aa0852f013332f31, type: 3}
   m_Bones:
   - {fileID: 400042}
   - {fileID: 400040}

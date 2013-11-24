@@ -52,24 +52,42 @@ public class Eq : MonoBehaviour
         }
     }
 
-	public void Wear(GameObject tmp) {
-		Item item = tmp.GetComponent<Item>();
+    public void RemoveItem(Item what) {
+        if (what == GetShield()) {
+            rightSlot = null;
+        }
+        if (what == GetWeapon()) {
+            leftSlot = null;
+        }
+        if (what == GetArmor()) {
+            upSlot = null;
+        }
+        for(int i=0;i<backpack.Count;++i) {
+            if (backpack[i].GetComponent<Item>().name  == what.name) {
+                backpack.RemoveAt(i);
+                return;
+            }
+        }
+    }
+
+	public void Wear(GameObject what) {
+		Item item = what.GetComponent<Item>();
 
 		switch(item.slotName){
 			case Item.SLOT_UP:
-				upSlot = tmp;
+				upSlot = what;
 				break;
 			case Item.SLOT_DOWN:
-				downSlot = tmp;
+				downSlot = what;
 				break;
 			case Item.SLOT_LEFT:
-				leftSlot = tmp;
+				leftSlot = what;
 				break;
 			case Item.SLOT_RIGHT:
-				rightSlot = tmp;
+				rightSlot = what;
 				break;
 		}
-		this.backpack.Add(tmp);
+		this.backpack.Add(what);
 
 	}
 

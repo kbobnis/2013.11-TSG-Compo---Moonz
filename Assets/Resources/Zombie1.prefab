@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
-  height: .150000006
+  height: .25
   radius: .0299999993
 --- !u!114 &11400002
 MonoBehaviour:
@@ -179,10 +179,10 @@ MonoBehaviour:
   power: 1
   hp: 3
   armorValue: 0
-  shield: 0
   maxHp: 3
   team: b
   points: 10
+  shieldActive: 0
 --- !u!114 &11400006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -205,17 +205,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47bd32e27c8eb468d8a80d55aa4292f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropChance: .0700000003
+  dropChance: 1
   dropsPrefabs:
   - {fileID: 100000, guid: 58f01b0d204aa4672a11c97f7d3787aa, type: 2}
   - {fileID: 100000, guid: ee67f364c14054405a48f2a3a0492b2d, type: 2}
   - {fileID: 100000, guid: 171284648df26437dab768fdf969226c, type: 2}
   - {fileID: 100000, guid: 7bf51fe56c5c04714bd896d3db0e69a1, type: 2}
+  - {fileID: 100000, guid: 1618ee0b259114fb794f90f0cf6d404d, type: 2}
   dropWeights:
   - 1
   - .200000003
   - .100000001
   - .5
+  - 100
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -240,6 +242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469d38b6a23072648adbefc2d2502d4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  backpack: []
   backpackFromGui: []
   upSlot: {fileID: 0}
   leftSlot: {fileID: 100000, guid: f2dddacb3cb3649a386fe821b5ed5c9d, type: 2}
