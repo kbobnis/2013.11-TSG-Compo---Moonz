@@ -431,4 +431,4 @@ MonoBehaviour:
   maxEnemyPower: 1
   totalEnemiesPowerGain: .200000003
   enemyPowerGain: .0399999991
-  spawnCooldown: 1
+  spawnCooldown: .5

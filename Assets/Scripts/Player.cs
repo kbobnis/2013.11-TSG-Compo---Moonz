@@ -43,7 +43,7 @@ public class Player : MonoBehaviour {
 				}
 			}
 			
-			bool downChange = Input.GetKeyDown(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftShift);
+			bool downChange = Input.GetKeyDown("joystick " + inputSuffix + " button 6") || (Input.GetKeyDown(KeyCode.DownArrow) && Input.GetKey(KeyCode.LeftShift));
 			if (downChange){
 				GetComponent<Eq>().ChangeSlot(Item.SLOT_DOWN);
 				_down = 0;
@@ -67,6 +67,14 @@ public class Player : MonoBehaviour {
             }
             bubble.SetActive(critter.shieldActive && eq.GetShield() != null);
 
+			bool buffUsed = Input.GetKeyDown("joystick " + inputSuffix + " button 14");
+            if (buffUsed && eq.GetBuff() != null) {
+                Item buff = eq.GetBuff();
+                critter.BuffSpeed(buff.speedChange, buff.buffDuration);
+                eq.RemoveItem(buff);
+            }
+
+
 			float h = Input.GetAxis("H"+inputSuffix);
             float v = Input.GetAxis("V"+inputSuffix);
 
@@ -79,8 +87,8 @@ public class Player : MonoBehaviour {
                 GetComponent<Animator>().SetInteger("animId", 1);
             }
 
-            sc.MoveForward(  (v + _up + _down)* critter.speed * Time.deltaTime);
-            sc.MoveSide( (h + _left + _right) * critter.speed * Time.deltaTime);
+            sc.MoveForward(  (v + _up + _down)* critter.speed * critter.buffSpeed * Time.deltaTime);
+            sc.MoveSide( (h + _left + _right) * critter.speed * critter.buffSpeed * Time.deltaTime);
 
             float fh = Input.GetAxis("FH"+inputSuffix);
             float fv = Input.GetAxis("FV"+inputSuffix);

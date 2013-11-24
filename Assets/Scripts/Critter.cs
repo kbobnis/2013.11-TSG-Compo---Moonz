@@ -13,6 +13,8 @@ public class Critter : MonoBehaviour {
     public bool shieldActive;
 
 	private float lastAttackTime;
+    private float buffDuration;
+    public float buffSpeed;
 
     Eq eq;
     SC sc;
@@ -21,12 +23,20 @@ public class Critter : MonoBehaviour {
         eq = GetComponent<Eq>();
         sc = GetComponent<SC>();
         lastAttackTime = 0;
+        buffSpeed = 1;
     }
     
     void Update () {
         Item shield = eq.GetShield();
         if (shield != null && !shieldActive) {
             shield.shieldHp = Mathf.Min(shield.shieldTotalHp, shield.shieldHp + shield.shieldTotalHp * Time.deltaTime / shield.shieldRestoreTime);
+        }
+
+        if (buffDuration > 0) {
+            buffDuration -= Time.deltaTime;
+            if (buffDuration <= 0) {
+                buffSpeed = 1;
+            }
         }
     }
 
@@ -82,13 +92,18 @@ public class Critter : MonoBehaviour {
         return overkill;
     }
 
+    public void BuffSpeed(float by, float duration) {
+        buffSpeed = by;
+        buffDuration = duration;
+    }
+
 
     public void Attack(Vector3 target) {
         if (eq != null) {
             Item weapon = eq.GetWeapon();
 
             if (weapon != null) {
-                if (Time.time - lastAttackTime > weapon.cooldown) {
+                if (Time.time - lastAttackTime > weapon.cooldown / buffSpeed) {
 					GameObject leftSlot = eq.leftSlot;
 					Sounds sounds = leftSlot.GetComponent<Sounds>();
 					if (leftSlot != null && sounds != null ){
