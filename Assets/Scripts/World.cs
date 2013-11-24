@@ -10,7 +10,6 @@ public class World : MonoBehaviour {
     public static List<GameObject> missiles;
     public static List<GameObject> drops;
 
-    public static Dictionary<string,GameObject> playerByInput; 
     public static Dictionary<string,bool> inputSuffixes;
 
     void Start() {
@@ -18,56 +17,26 @@ public class World : MonoBehaviour {
         players = new List<GameObject>(GameObject.FindGameObjectsWithTag("Player"));
         missiles = new List<GameObject>();
         drops = new List<GameObject>();
-        playerByInput = new Dictionary<string,GameObject>();
         inputSuffixes = new Dictionary<string,bool>();
         inputSuffixes["1"] = false;
         inputSuffixes["2"] = false;
     }
     
     void Update () {
-
-		if (players.Count <= 1) {
-		string[] names = null; 
-		bool pad2 = Input.GetKey(KeyCode.Joystick2Button0);
-		if (pad2) {
-			names = new string[] { "pad 1", "pad 2" };
-		}
-		else {
-			names = new string[] { "pad 1"};
-		}
-
-
-        List<string> playersToRemove = new List<string>();
-        foreach (string key in playerByInput.Keys) {
-            playersToRemove.Add(key);
-        }
-        for (int i=0; i<names.Length; ++i) {
-            if (!playerByInput.ContainsKey(names[i])) {
-                foreach (string key in inputSuffixes.Keys) {
-                    if (inputSuffixes[key] == false) {
-                        GameObject newPlayer = Instantiate(Resources.Load("Player", typeof(GameObject))) as GameObject;
-                        inputSuffixes[key] = true;
-                        newPlayer.GetComponent<Player>().inputSuffix = key;
-                        Debug.Log("Added player " + names[i] + " at pad "+ key);
-                        players.Add(newPlayer);
-                        playerByInput[names[i]] = newPlayer;
-                        break;
-                    }
-                }
+        for (int k=1; k <=2; ++k) {
+            string key = k.ToString();
+            bool padActive = false;
+            for (int i=0; i < 10; ++i) {
+                padActive = padActive || Input.GetKey("joystick " + key + " button "+i);
             }
-            if (playersToRemove.Contains(names[i])) {
-                playersToRemove.Remove(names[i]);
+            if (inputSuffixes[key] == false && padActive) {
+                GameObject newPlayer = Instantiate(Resources.Load("Player", typeof(GameObject))) as GameObject;
+                newPlayer.GetComponent<Player>().inputSuffix = key;
+                players.Add(newPlayer);
+                inputSuffixes[key] = true;
+                Debug.Log("Added player " + key);
             }
         }
-        for (int i=0; i<playersToRemove.Count; ++i) {
-            Debug.Log("Removing player " + playersToRemove[i]);
-            GameObject disconnectedPlayer = playerByInput[playersToRemove[i]];
-            players.Remove(disconnectedPlayer);
-            inputSuffixes[disconnectedPlayer.GetComponent<Player>().inputSuffix] = false;
-            Destroy(disconnectedPlayer);
-            playerByInput.Remove(playersToRemove[i]);
-        }
-		}
     }
 
     public static GameObject GetNearestInArray(SC sc, List<GameObject> array) {

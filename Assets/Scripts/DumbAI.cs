@@ -6,14 +6,12 @@ public class DumbAI : MonoBehaviour {
     Critter crit;
     float speedModifier;
 
-	// Use this for initialization
 	void Start () {
         sc = GetComponent<SC>();
         crit = GetComponent<Critter>();
         speedModifier = Random.value + 0.5f;
 	}
 	
-	// Update is called once per frame
 	void Update () {
         if (sc && crit) {
             GameObject target = World.GetNearestPlayer(sc);
