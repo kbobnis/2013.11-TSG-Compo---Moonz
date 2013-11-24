@@ -46,6 +46,7 @@ MonoBehaviour:
   damage: 1
   dualHand: 0
   cooldown: .0500000007
+  armorValue: 0
   shieldValue: 0
   shieldRestoreTime: 0
   speedChange: 0

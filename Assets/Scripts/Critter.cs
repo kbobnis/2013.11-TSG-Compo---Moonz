@@ -11,8 +11,7 @@ public class Critter : MonoBehaviour {
     public float maxHp;
     public string team;
     public float points;
-
-    float lastAttackTime;
+	private float lastAttackTime;
 
     Eq eq;
     SC sc;
@@ -28,6 +27,12 @@ public class Critter : MonoBehaviour {
 
     public float TakeDamage(float dmg)
     {
+		Sounds sounds = GetComponent<Sounds>();
+		AudioSource audioSource = GetComponent<AudioSource>();
+		if (sounds != null && audioSource != null){
+			sounds.play(audioSource, sounds.gotHit);
+		}
+
         if (eq != null) {
             float totalArmor = armorValue;
             Item armor = eq.GetArmor();
@@ -54,6 +59,14 @@ public class Critter : MonoBehaviour {
         float overkill = dmg - hp;
         hp -= dmg;
         if (hp <= 0) {
+			AudioSource _audioSource = GetComponent<AudioSource>();
+			Sounds _s = GetComponent<Sounds>();
+			if (_audioSource != null && _s != null)
+			{
+				_s.play(_audioSource, sounds.death);
+			}
+
+
             gameObject.SendMessage("LetMeDie");
         }
         return overkill;
@@ -62,8 +75,16 @@ public class Critter : MonoBehaviour {
     public void Attack(Vector3 target) {
         if (eq != null) {
             Item weapon = eq.GetWeapon();
+
             if (weapon != null) {
                 if (Time.time - lastAttackTime > weapon.cooldown) {
+					GameObject leftSlot = eq.leftSlot;
+					Sounds sounds = leftSlot.GetComponent<Sounds>();
+					AudioSource audioSource = GetComponent<AudioSource>();
+					if (leftSlot != null && sounds != null && audioSource != null){
+						sounds.play(audioSource, sounds.spawn);
+					}
+
                     if (weapon.missilePrefab != null) {
                         GameObject missileObj = Instantiate(weapon.missilePrefab) as GameObject;
                         missileObj.GetComponent<Missile>().SetParamsFromWeapon(weapon);
