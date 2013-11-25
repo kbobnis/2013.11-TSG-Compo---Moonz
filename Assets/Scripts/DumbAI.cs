@@ -10,6 +10,7 @@ public class DumbAI : MonoBehaviour {
         sc = GetComponent<SC>();
         crit = GetComponent<Critter>();
         speedModifier = Random.value + 0.5f;
+        GetComponent<Animator>().speed = speedModifier * 0.75f;
 	}
 	
 	void Update () {

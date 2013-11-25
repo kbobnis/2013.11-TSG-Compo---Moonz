@@ -23,7 +23,7 @@ public class Cam : MonoBehaviour {
             mean /= World.players.Count;
             mean = mean.normalized;
 
-            Camera.main.transform.localPosition = mean * World.radius * 3;
+            Camera.main.transform.localPosition += ((mean * World.radius * 3 - Camera.main.transform.up) - Camera.main.transform.localPosition) * 0.2f;
             Camera.main.transform.LookAt(mean, up);
 
             Vector3 shake = new Vector3();
