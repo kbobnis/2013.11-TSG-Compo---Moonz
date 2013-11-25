@@ -49,7 +49,17 @@ public class World : MonoBehaviour {
                 Debug.Log("Added player " + key);
             }
         }
+
+
     }
+
+	void OnGUI(){
+		if (players.Count == 0)
+		{
+			GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), Resources.Load("logo", typeof(Texture))as Texture, ScaleMode.ScaleAndCrop);
+			GUI.Label(new Rect(50, 50, 300, 70), "Press button 'A' to start");
+		}
+	}
 
     public static GameObject GetNearestInArray(SC sc, List<GameObject> array) {
         GameObject near = null;
