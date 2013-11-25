@@ -121,7 +121,7 @@ public class Critter : MonoBehaviour {
 			if (buffItem.perm) {
 				speed += buffItem.speedChange;
 				armorValue += buffItem.armorValue;
-				hp += buffItem.healing;
+                Heal(buffItem.healing);
 				Destroy(buff);
 			}
 			else {

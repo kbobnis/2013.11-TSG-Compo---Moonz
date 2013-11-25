@@ -864,7 +864,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47bd32e27c8eb468d8a80d55aa4292f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropChance: .0700000003
+  dropChance: .300000012
   dropsPrefabs:
   - {fileID: 100000, guid: 58f01b0d204aa4672a11c97f7d3787aa, type: 2}
   - {fileID: 100000, guid: ee67f364c14054405a48f2a3a0492b2d, type: 2}
@@ -875,7 +875,7 @@ MonoBehaviour:
   dropWeights:
   - 1
   - .200000003
-  - .100000001
+  - 100
   - .5
   - .400000006
   - .600000024
