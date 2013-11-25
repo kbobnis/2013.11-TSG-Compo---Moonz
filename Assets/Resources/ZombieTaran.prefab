@@ -684,9 +684,13 @@ MonoBehaviour:
   dropsPrefabs:
   - {fileID: 100000, guid: ee67f364c14054405a48f2a3a0492b2d, type: 2}
   - {fileID: 100000, guid: ea7bc6d840a714d948237a85f990c55b, type: 2}
+  - {fileID: 100000, guid: 7bf51fe56c5c04714bd896d3db0e69a1, type: 2}
+  - {fileID: 100000, guid: b1beecb7701884b148d584f681c6899e, type: 2}
   dropWeights:
   - 1
   - .699999988
+  - .200000003
+  - .200000003
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1

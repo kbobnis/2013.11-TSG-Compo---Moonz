@@ -92,17 +92,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47bd32e27c8eb468d8a80d55aa4292f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropChance: .150000006
+  dropChance: .200000003
   dropsPrefabs:
   - {fileID: 100000, guid: ee67f364c14054405a48f2a3a0492b2d, type: 2}
   - {fileID: 100000, guid: ea7bc6d840a714d948237a85f990c55b, type: 2}
   - {fileID: 100000, guid: 7bf51fe56c5c04714bd896d3db0e69a1, type: 2}
   - {fileID: 100000, guid: 1618ee0b259114fb794f90f0cf6d404d, type: 2}
+  - {fileID: 100000, guid: b1beecb7701884b148d584f681c6899e, type: 2}
   dropWeights:
   - 1
   - .200000003
   - .5
   - .5
+  - .300000012
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -187,6 +189,7 @@ MonoBehaviour:
   death: {fileID: 8300000, guid: b734b1123a40e994c94ab66e8109b044, type: 3}
   gotHit: {fileID: 8300000, guid: 5796c058136af2a49a09f615db559871, type: 3}
   spawn: {fileID: 0}
+  move: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -823,6 +823,7 @@ MonoBehaviour:
   death: {fileID: 8300000, guid: 8e1b9ee3b89479f499925261492cb8cf, type: 3}
   gotHit: {fileID: 8300000, guid: dd53b17fc99e4c548832f0a965cf5c8c, type: 3}
   spawn: {fileID: 0}
+  move: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -864,7 +865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47bd32e27c8eb468d8a80d55aa4292f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dropChance: .300000012
+  dropChance: .150000006
   dropsPrefabs:
   - {fileID: 100000, guid: 58f01b0d204aa4672a11c97f7d3787aa, type: 2}
   - {fileID: 100000, guid: ee67f364c14054405a48f2a3a0492b2d, type: 2}
@@ -873,11 +874,11 @@ MonoBehaviour:
   - {fileID: 100000, guid: 1618ee0b259114fb794f90f0cf6d404d, type: 2}
   - {fileID: 100000, guid: b1beecb7701884b148d584f681c6899e, type: 2}
   dropWeights:
-  - 1
-  - .200000003
-  - 100
   - .5
-  - .400000006
+  - .100000001
+  - .200000003
+  - .899999976
+  - .600000024
   - .600000024
 --- !u!114 &11400008
 MonoBehaviour:
