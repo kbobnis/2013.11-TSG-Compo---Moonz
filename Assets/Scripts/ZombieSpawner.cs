@@ -125,6 +125,7 @@ public class ZombieSpawner : MonoBehaviour {
                     World.AddEnemy(enemy);
                 }
             }
+            SpreadEvilGuys();
         }
     }
 
