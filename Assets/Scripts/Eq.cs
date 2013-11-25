@@ -185,7 +185,10 @@ public class Eq : MonoBehaviour
 		int j =0; 
 		for(int i=lastIndex+1; stillLooking && j < backpack.Count  + 1; i++, j++) {
 			i = i % backpack.Count;
-			string slotNameTmp = (backpack[i] as GameObject).GetComponent<Item>().slotName;
+			string slotNameTmp = null;
+			if (backpack[i] != null){
+				slotNameTmp = (backpack[i] as GameObject).GetComponent<Item>().slotName;
+			}
 
 			if (slotNameTmp == slotName) {
 				stillLooking = false;

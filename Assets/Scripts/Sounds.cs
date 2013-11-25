@@ -6,6 +6,7 @@ public class Sounds : MonoBehaviour {
 	public AudioClip death;
 	public AudioClip gotHit;
 	public AudioClip spawn;
+	public AudioClip move;
 
 	// Use this for initialization
 	void Start () {
@@ -46,6 +47,11 @@ public class Sounds : MonoBehaviour {
 		float time = play(obj, death);
 		Destroy(obj, time);
 	}
+
+	public void Move(GameObject gameObject){
+
+	}
+
 
 
 }
