@@ -12,6 +12,7 @@ public class MoonzInput
 	public const string D = "d";
 	public const string RB = "RB";
 	public const string X = "X";
+	public const string START = "start";
 
 	public const string DEFAULT_MODE = "default";
 
@@ -44,6 +45,9 @@ public class MoonzInput
                 case A: {
                     return Input.GetKeyDown("joystick " + inputSuffix + " button 0");				
                 }
+				case START:{
+					return Input.GetKeyDown("joystick " + inputSuffix + " button 7");
+				}
             }
 			if (keyCode == MoonzInput.X) return Input.GetKeyDown("joystick "+inputSuffix+" button 2");
 			if (keyCode == RB) return Input.GetKeyDown("joystick "+inputSuffix+" button 5");
@@ -58,6 +62,7 @@ public class MoonzInput
 			if (keyCode == C) return Input.GetKeyDown("joystick "+inputSuffix+" button 18");
 			if (keyCode == D) return Input.GetKeyDown("joystick "+inputSuffix+" button 19");
 			if (keyCode == RB) return Input.GetKeyDown("joystick "+inputSuffix+" button 14");
+			if (keyCode == START) return Input.GetKeyDown("joystick "+inputSuffix+" button 9");
 		}
         
 
