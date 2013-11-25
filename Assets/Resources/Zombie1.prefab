@@ -878,7 +878,7 @@ MonoBehaviour:
   - .100000001
   - .5
   - .400000006
-  - 100
+  - .600000024
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -909,7 +909,6 @@ MonoBehaviour:
   team: b
   points: 10
   shieldActive: 0
-  buffSpeed: 0
 --- !u!114 &11400012
 MonoBehaviour:
   m_ObjectHideFlags: 1
