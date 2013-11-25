@@ -19,7 +19,7 @@ public class ZombieSpawner : MonoBehaviour {
     public static int numEnemiesLeft;
     public static bool keepCalmAndWaitForNextWave;
 
-    void Start () {
+    public void Start () {
         totalEnemiesPower = 0;
         lastSpawnTime = 0;
         InitWaves();

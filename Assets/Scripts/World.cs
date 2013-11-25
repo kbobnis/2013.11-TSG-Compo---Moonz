@@ -9,8 +9,10 @@ public class World : MonoBehaviour {
     public static List<GameObject> enemies;
     public static List<GameObject> missiles;
     public static List<GameObject> drops;
+	public static ZombieSpawner zombieSpawner;
 
     public static Dictionary<string,bool> inputSuffixes;
+	public static World world;
 
     public static float score;
 
@@ -22,6 +24,7 @@ public class World : MonoBehaviour {
         inputSuffixes = new Dictionary<string,bool>();
         inputSuffixes["1"] = false;
         inputSuffixes["2"] = false;
+		world = this;
         score = 0;
     }
     
@@ -89,6 +92,10 @@ public class World : MonoBehaviour {
     public static void RemovePlayer(GameObject g) {
         Destroy(g);
         players.Remove(g);
+
+		if (players.Count == 0){
+			world.Start();
+		}
     }
 
 

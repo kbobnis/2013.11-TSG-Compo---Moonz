@@ -104,5 +104,8 @@ public class Player : MonoBehaviour {
 
     void LetMeDie() {
         World.RemovePlayer(gameObject);
+
+
+
     }
 }
