@@ -4,30 +4,29 @@ using System.Collections.Generic;
 
 public class ZombieSpawner : MonoBehaviour {
 
-    public float maxTotalEnemiesPower;
-    public float maxEnemyPower;
-    public float totalEnemiesPowerGain;
-    public float enemyPowerGain;
     public float spawnCooldown;
 
-    private static float totalEnemiesPower;
-    float lastSpawnTime;
+    static float lastSpawnTime;
 
-    List<List<GameObject>> waves;
+    static List<List<GameObject>> waves;
 
     public static int currentWaveId;
     public static int numEnemiesLeft;
     public static bool keepCalmAndWaitForNextWave;
 
     public void Start () {
-        totalEnemiesPower = 0;
+        ExterminateTheWorld();
+    }
+
+    public static void ExterminateTheWorld() {
         lastSpawnTime = 0;
         InitWaves();
         currentWaveId = 0;
         numEnemiesLeft = waves[currentWaveId].Count;
+        keepCalmAndWaitForNextWave = false;
     }
 
-    void InitWaves() {
+    static void InitWaves() {
         waves = new List<List<GameObject>>();
 
         CreateWave();
@@ -55,29 +54,34 @@ public class ZombieSpawner : MonoBehaviour {
         AddEnemiesToWave("ZombieTaran", 15);
 
         CreateWave();
-        AddEnemiesToWave("Zombie1", 20);
+        AddEnemiesToWave("Zombie1", 25);
         AddEnemiesToWave("ZombieArcher", 20);
         AddEnemiesToWave("ZombieTaran", 20);
         AddEnemiesToWave("Boss", 1);
 
         CreateWave();
+        AddEnemiesToWave("Zombie1", 25);
         AddEnemiesToWave("ZombieArcher", 10);
         AddEnemiesToWave("ZombieTaran", 25);
-        AddEnemiesToWave("Boss", 5);
+        AddEnemiesToWave("Boss", 3);
 
         CreateWave();
+        AddEnemiesToWave("Zombie1", 25);
         AddEnemiesToWave("ZombieTaran", 30);
-        AddEnemiesToWave("Boss", 10);
+        AddEnemiesToWave("Boss", 6);
 
         CreateWave();
-        AddEnemiesToWave("Boss", 20);
+        AddEnemiesToWave("Zombie1", 40);
+        AddEnemiesToWave("ZombieTaran", 3);
+        AddEnemiesToWave("ZombieArcher", 8);
+        AddEnemiesToWave("Boss", 8);
     }
 
-    void CreateWave() {
+    static void CreateWave() {
         waves.Add(new List<GameObject>());
     }
 
-    void AddEnemiesToWave(string kind, int num) {
+    static void AddEnemiesToWave(string kind, int num) {
         while (num-- > 0) {
             waves[waves.Count-1].Add( Resources.Load(kind, typeof(GameObject)) as GameObject );
         }
@@ -150,6 +154,5 @@ public class ZombieSpawner : MonoBehaviour {
     public static void EnemyDead(GameObject gameObject){
         numEnemiesLeft--;
         World.score += gameObject.GetComponent<Critter>().points;
-        ZombieSpawner.totalEnemiesPower -= gameObject.GetComponent<Critter>().power;
     }
 }

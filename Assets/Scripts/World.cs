@@ -9,10 +9,8 @@ public class World : MonoBehaviour {
     public static List<GameObject> enemies;
     public static List<GameObject> missiles;
     public static List<GameObject> drops;
-	public static ZombieSpawner zombieSpawner;
 
     public static Dictionary<string,bool> inputSuffixes;
-	public static World world;
     public static AudioSource music;
 
     public static float score;
@@ -25,16 +23,33 @@ public class World : MonoBehaviour {
         inputSuffixes = new Dictionary<string,bool>();
         inputSuffixes["1"] = false;
         inputSuffixes["2"] = false;
-		world = this;
         score = 0;
         music = GameObject.Find("muzyczka").GetComponent<AudioSource>();
     }
+
+    static void ExterminateTheWorld() {
+        for (int i=0; i<players.Count; ++i) {
+            Destroy(players[i]);
+        }
+        players.Clear();
+        for (int i=0; i<enemies.Count; ++i) {
+            Destroy(enemies[i]);
+        }
+        enemies.Clear();
+        for (int i=0; i<missiles.Count; ++i) {
+            Destroy(missiles[i]);
+        }
+        missiles.Clear();
+        for (int i=0; i<drops.Count; ++i) {
+            Destroy(drops[i]);
+        }
+        drops.Clear();
+        inputSuffixes["1"] = false;
+        inputSuffixes["2"] = false;
+        score = 0;
+    }
     
     void Update () {
-        if (Input.GetKeyDown(KeyCode.M)) {
-            MoonzInput.mode = "mac";
-        }
-
         for (int k=1; k <=2; ++k) {
             string key = k.ToString();
             bool padActive = false;
@@ -99,7 +114,8 @@ public class World : MonoBehaviour {
         players.Remove(g);
 
 		if (players.Count == 0){
-			world.Start();
+            World.ExterminateTheWorld();
+            ZombieSpawner.ExterminateTheWorld();
 		}
     }
 

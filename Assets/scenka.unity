@@ -856,10 +856,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560a21d83e1dc4fec82c04d9aa3e404f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTotalEnemiesPower: 5
-  maxEnemyPower: 1
-  totalEnemiesPowerGain: .200000003
-  enemyPowerGain: .0399999991
   spawnCooldown: .5
 --- !u!1001 &1821038294
 Prefab:
