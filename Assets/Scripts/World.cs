@@ -13,6 +13,7 @@ public class World : MonoBehaviour {
 
     public static Dictionary<string,bool> inputSuffixes;
 	public static World world;
+    public static AudioSource music;
 
     public static float score;
 
@@ -26,6 +27,7 @@ public class World : MonoBehaviour {
         inputSuffixes["2"] = false;
 		world = this;
         score = 0;
+        music = GameObject.Find("muzyczka").GetComponent<AudioSource>();
     }
     
     void Update () {
@@ -61,7 +63,10 @@ public class World : MonoBehaviour {
 		{
 			GUI.DrawTexture(new Rect(0, 0, Screen.width, Screen.height), Resources.Load("logo", typeof(Texture))as Texture, ScaleMode.ScaleAndCrop);
 			GUI.Label(new Rect(50, 50, 300, 70), "Press button 'A' to start");
-		}
+            music.volume = 0;
+		} else {
+            music.volume = 0.15f;
+        }
 	}
 
     public static GameObject GetNearestInArray(SC sc, List<GameObject> array) {
