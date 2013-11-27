@@ -42,7 +42,7 @@ MonoBehaviour:
   _name: Zombie Fire
   texture: {fileID: 2800000, guid: 317549f9a790f433c9ffdf87a061dfa7, type: 3}
   slotName: left
-  maxDist: 2
+  maxDist: 1.5
   angle: 5
   damage: 2
   dualHand: 0

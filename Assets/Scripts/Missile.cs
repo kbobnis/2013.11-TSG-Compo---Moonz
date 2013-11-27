@@ -11,6 +11,7 @@ public class Missile : MonoBehaviour {
     public float dmg;
     public float life;
     public string team;
+    public float startingSpeed;
 
 
     void Start () {
@@ -42,7 +43,7 @@ public class Missile : MonoBehaviour {
 
     public virtual void SetParamsFromWeapon(GameObject gameObjectWeapon) {
 		Item weapon = gameObjectWeapon.GetComponent<Item>() as Item;
-        speed = weapon.missileSpeed;
+        speed = weapon.missileSpeed + startingSpeed;
         dmg = weapon.damage;
         life = weapon.maxDist / weapon.missileSpeed;
 		sounds = gameObjectWeapon.GetComponent<Sounds>();
