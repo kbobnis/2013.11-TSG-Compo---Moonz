@@ -861,6 +861,7 @@ MonoBehaviour:
   death: {fileID: 8300000, guid: efa845b88d2e9c94fa7b1db84addb2aa, type: 3}
   gotHit: {fileID: 8300000, guid: c97913aefeb01a64090819cdc6850f65, type: 3}
   spawn: {fileID: 0}
+  move: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -875,6 +876,7 @@ MonoBehaviour:
   backpack: []
   backpackFromGui:
   - {fileID: 100000, guid: 7c13dc27fdea82e41a611200ed58e59b, type: 2}
+  - {fileID: 100000, guid: c55d4a0b54725454ea978155def0cbb6, type: 2}
   upSlot: {fileID: 0}
   leftSlot: {fileID: 100000, guid: 4e7e916f44f774b82bdc7c96191e0d1d, type: 2}
   rightSlot: {fileID: 0}
@@ -909,7 +911,6 @@ MonoBehaviour:
   team: a
   points: 0
   shieldActive: 0
-  buffSpeed: 0
 --- !u!114 &11400008
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -950,6 +951,8 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   height: 0
   radius: 0
+  lastPosition: {x: 0, y: 0, z: 0}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
