@@ -9,9 +9,13 @@ public class SC : MonoBehaviour {
     public float height;
     public float radius;
 
+    public Vector3 lastPosition;
+    public Vector3 velocity;
+
     void Awake() {
         position = new Vector3(0,0,1);
         direction = new Vector3(0,1,0);
+        lastPosition = position;
     }
 
     public float GetAngleTo(Vector3 target) {
@@ -79,6 +83,7 @@ public class SC : MonoBehaviour {
     }
     
     void Update () {
-    
+        velocity = position - lastPosition;
+        lastPosition = position;
     }
 }

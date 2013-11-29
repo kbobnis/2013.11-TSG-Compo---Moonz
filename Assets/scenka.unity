@@ -196,6 +196,91 @@ Transform:
   m_LocalScale: {x: 2.53999996, y: 2.5400002, z: 2.53999996}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1 &968528607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 968528609}
+  - 82: {fileID: 968528608}
+  m_Layer: 0
+  m_Name: muzyczka
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &968528608
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 968528607}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_audioClip: {fileID: 8300000, guid: 07a3bac0a69ce417784a9d3928226d0e, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: .104999997
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+--- !u!4 &968528609
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 968528607}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.44630337, y: -4.86338615, z: -14.9255466}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &1201617062
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,7 +447,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 08ecc8629b3d74ab6823899c25e673c4, type: 3}
   m_PrefabInternal: {fileID: 33945221}
   m_GameObject: {fileID: 1233122265}
-  m_LocalRotation: {x: -.74281472, y: .00283484743, z: -.578001678, w: .337834954}
+  m_LocalRotation: {x: -.74281466, y: .0028348472, z: -.578001618, w: .337834924}
   m_LocalPosition: {x: 3.42543316, y: 1.50939417, z: .515056729}
   m_LocalScale: {x: 2.53999996, y: 2.5400002, z: 2.53999996}
   m_Children: []
@@ -771,10 +856,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 560a21d83e1dc4fec82c04d9aa3e404f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTotalEnemiesPower: 5
-  maxEnemyPower: 1
-  totalEnemiesPowerGain: .200000003
-  enemyPowerGain: .0399999991
   spawnCooldown: .5
 --- !u!1001 &1821038294
 Prefab:

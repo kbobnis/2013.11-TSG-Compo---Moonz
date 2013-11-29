@@ -32,7 +32,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: -.707106888, y: 0, z: -0, w: .707106769}
-  m_LocalPosition: {x: 6.18057728, y: 1.15349102, z: -.962836266}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2c38007aa93043bd8282cbcb5f3109e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: .180000007
+  speed: .150000006
   power: 3.20000005
   hp: 6
   armorValue: 0
@@ -151,6 +151,8 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   height: .349999994
   radius: .0299999993
+  lastPosition: {x: 0, y: 0, z: 0}
+  velocity: {x: 0, y: 0, z: 0}
 --- !u!114 &11400010
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -153,15 +153,16 @@ public class Critter : MonoBehaviour {
 						sounds.play(gameObject, sounds.spawn);
 					}
 
+                    Vector3 attackDirection = target - sc.position;
                     if (weapon.missilePrefab != null) {
                         GameObject missileObj = Instantiate(weapon.missilePrefab) as GameObject;
-                        missileObj.GetComponent<Missile>().SetParamsFromWeapon(eq.leftSlot);
+                        missileObj.GetComponent<Missile>().startingSpeed = Mathf.Max(0, Vector3.Dot(GetComponent<SC>().velocity, attackDirection.normalized)) / Time.deltaTime ;
                         missileObj.GetComponent<Missile>().team = team;
+                        missileObj.GetComponent<Missile>().SetParamsFromWeapon(eq.leftSlot);
                         missileObj.GetComponent<SC>().SetPosition(GetComponent<SC>().position);
                         missileObj.GetComponent<SC>().SetDirectionTo(target);
                         World.AddMissile(missileObj);
                     } else {
-                        Vector3 attackDirection = target - sc.position;
                         Quaternion postRotation = Quaternion.FromToRotation(sc.direction, attackDirection.normalized);
                         GameObject slashFx = Instantiate(Resources.Load("Slash"), transform.localPosition, postRotation) as GameObject;
                         slashFx.transform.parent = transform;

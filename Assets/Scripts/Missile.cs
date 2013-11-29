@@ -11,6 +11,7 @@ public class Missile : MonoBehaviour {
     public float dmg;
     public float life;
     public string team;
+    public float startingSpeed;
 
 
     void Start () {
@@ -21,17 +22,29 @@ public class Missile : MonoBehaviour {
     void Update () {
         sc.MoveForward(speed * Time.deltaTime);
 
-        List<GameObject> enemies = World.GetOppositeCollection(team);
-        for (int i=enemies.Count-1; i>=0; --i) {
-            GameObject enemy = enemies[i];
-            if (sc.IsColliding(enemy)) {
-                float overkill = enemy.GetComponent<Critter>().TakeDamage(dmg);
-                if (overkill <= 0) {
-                    World.RemoveMissile(gameObject);
-                    return;
-                }
-            }
-        }
+		if (dmg < 0) { // zbijacz pocisków
+			List<GameObject> missiles = World.missiles;
+			for (int i=missiles.Count-1; i>=0; --i) {
+				GameObject mis = missiles[i];
+				if (mis != gameObject && sc.IsColliding(mis)) {
+					if (mis.GetComponent<Missile>().team != team) {
+						World.RemoveMissile(mis);
+					}
+				}
+			}
+		} else {
+			List<GameObject> enemies = World.GetOppositeCollection(team);
+			for (int i=enemies.Count-1; i>=0; --i) {
+				GameObject enemy = enemies[i];
+				if (sc.IsColliding(enemy)) {
+					float overkill = enemy.GetComponent<Critter>().TakeDamage(dmg);
+					if (overkill <= 0) {
+						World.RemoveMissile(gameObject);
+						return;
+					}
+				}
+			}
+		}
 
         life -= Time.deltaTime;
         if (life < 0) {
@@ -42,7 +55,7 @@ public class Missile : MonoBehaviour {
 
     public virtual void SetParamsFromWeapon(GameObject gameObjectWeapon) {
 		Item weapon = gameObjectWeapon.GetComponent<Item>() as Item;
-        speed = weapon.missileSpeed;
+        speed = weapon.missileSpeed + startingSpeed;
         dmg = weapon.damage;
         life = weapon.maxDist / weapon.missileSpeed;
 		sounds = gameObjectWeapon.GetComponent<Sounds>();
