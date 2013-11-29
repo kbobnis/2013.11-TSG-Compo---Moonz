@@ -13,7 +13,7 @@ public class ZombieSpawner : MonoBehaviour {
     private static float totalEnemiesPower;
     float lastSpawnTime;
 
-    List<List<GameObject>> waves;
+	List<List<GameObject>> waves = new List<List<GameObject>>();
 
     public static int currentWaveId;
     public static int numEnemiesLeft;
@@ -28,6 +28,13 @@ public class ZombieSpawner : MonoBehaviour {
     }
 
     void InitWaves() {
+		foreach(List<GameObject> wave in waves){
+			foreach(GameObject monster in wave){
+				Destroy(monster);
+			}
+		}
+
+
         waves = new List<List<GameObject>>();
 
         CreateWave();
