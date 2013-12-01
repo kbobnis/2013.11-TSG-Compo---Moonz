@@ -43,9 +43,9 @@ MonoBehaviour:
   slotName: left
   maxDist: .600000024
   angle: 1
-  damage: 1
+  damage: .400000006
   dualHand: 0
-  cooldown: .0500000007
+  cooldown: .0250000004
   armorValue: 0
   shieldProtection: 0
   shieldRestoreTime: 0
@@ -54,7 +54,9 @@ MonoBehaviour:
   speedChange: 0
   buffDuration: 0
   missilePrefab: {fileID: 100000, guid: c63ff6db32eb944e1aa03b1affe8dfad, type: 2}
-  missileSpeed: .25
+  missileSpeed: 2
+  missileSpeedVariance: 1
+  isMissilePiercing: 0
   healing: 0
   perm: 0
 --- !u!1001 &100100000

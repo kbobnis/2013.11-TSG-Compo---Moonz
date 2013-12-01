@@ -30,6 +30,8 @@ public class Item : MonoBehaviour {
 
     public GameObject missilePrefab;
     public float missileSpeed;
+	public float missileSpeedVariance;
+	public bool isMissilePiercing;
 
     public float healing;
 

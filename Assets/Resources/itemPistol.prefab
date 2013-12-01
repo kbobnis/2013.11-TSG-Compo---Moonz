@@ -40,11 +40,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Pistol
-  texture: {fileID: 2800000, guid: e80aa309d5aa74172b71c23f7589cb50, type: 3}
+  texture: {fileID: 2800000, guid: f310cd69792114894a286ca0404309dc, type: 3}
   slotName: left
   maxDist: 3
   angle: 5
-  damage: 2
+  damage: .200000003
   dualHand: 0
   cooldown: .300000012
   armorValue: 0
@@ -56,6 +56,8 @@ MonoBehaviour:
   buffDuration: 0
   missilePrefab: {fileID: 100000, guid: 6784dd79855714ac783f27a243362f5a, type: 2}
   missileSpeed: 1
+  missileSpeedVariance: 0
+  isMissilePiercing: 1
   healing: 0
   perm: 0
 --- !u!114 &11400002
@@ -72,6 +74,7 @@ MonoBehaviour:
   death: {fileID: 0}
   gotHit: {fileID: 0}
   spawn: {fileID: 8300000, guid: ea49b89affe77b542b325d9729740565, type: 3}
+  move: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

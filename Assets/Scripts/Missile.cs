@@ -12,6 +12,7 @@ public class Missile : MonoBehaviour {
     public float life;
     public string team;
     public float startingSpeed;
+	public bool isPiercing;
 
 
     void Start () {
@@ -39,8 +40,10 @@ public class Missile : MonoBehaviour {
 				if (sc.IsColliding(enemy)) {
 					float overkill = enemy.GetComponent<Critter>().TakeDamage(dmg);
 					if (overkill <= 0) {
-						World.RemoveMissile(gameObject);
-						return;
+						if (!isPiercing) {
+							World.RemoveMissile(gameObject);
+							return;
+						}
 					}
 				}
 			}
@@ -55,9 +58,10 @@ public class Missile : MonoBehaviour {
 
     public virtual void SetParamsFromWeapon(GameObject gameObjectWeapon) {
 		Item weapon = gameObjectWeapon.GetComponent<Item>() as Item;
-        speed = weapon.missileSpeed + startingSpeed;
+        speed = weapon.missileSpeed + startingSpeed + Random.Range(-weapon.missileSpeedVariance, weapon.missileSpeedVariance) ;
         dmg = weapon.damage;
         life = weapon.maxDist / weapon.missileSpeed;
+		isPiercing = weapon.isMissilePiercing;
 		sounds = gameObjectWeapon.GetComponent<Sounds>();
     }
 }
