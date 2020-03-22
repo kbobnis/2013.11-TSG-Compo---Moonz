@@ -1,109 +1,258 @@
 fileFormatVersion: 2
 guid: 248441c588f4a4f4aa0852f013332f31
 ModelImporter:
-  serializedVersion: 15
-  fileIDToRecycleName:
-    100000: //RootNode
-    100002: tank mesh
-    100004: tankhead
-    100006: tankLArm1
-    100008: tankLArm2
-    100010: tankLArmCollarbone
-    100012: tankLArmf1
-    100014: tankLArmf1 1
-    100016: tankLArmPalm
-    100018: tankLCalf
-    100020: tankLFoot
-    100022: tankLThigh
-    100024: tankPelvis
-    100026: tankRArm1
-    100028: tankRArm2
-    100030: tankRArmCollarbone
-    100032: tankRArmf1
-    100034: tankRArmf1 1
-    100036: tankRArmPalm
-    100038: tankRCalf
-    100040: tankRFoot
-    100042: tankRibcage001
-    100044: tankRThigh
-    100046: tankSpine
-    400000: //RootNode
-    400002: tank mesh
-    400004: tankhead
-    400006: tankLArm1
-    400008: tankLArm2
-    400010: tankLArmCollarbone
-    400012: tankLArmf1
-    400014: tankLArmf1 1
-    400016: tankLArmPalm
-    400018: tankLCalf
-    400020: tankLFoot
-    400022: tankLThigh
-    400024: tankPelvis
-    400026: tankRArm1
-    400028: tankRArm2
-    400030: tankRArmCollarbone
-    400032: tankRArmf1
-    400034: tankRArmf1 1
-    400036: tankRArmPalm
-    400038: tankRCalf
-    400040: tankRFoot
-    400042: tankRibcage001
-    400044: tankRThigh
-    400046: tankSpine
-    4300000: tank mesh
-    7400000: Take 001
-    9500000: //RootNode
-    13700000: tank mesh
+  serializedVersion: 19300
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: //RootNode
+  - first:
+      1: 100002
+    second: tank mesh
+  - first:
+      1: 100004
+    second: tankhead
+  - first:
+      1: 100006
+    second: tankLArm1
+  - first:
+      1: 100008
+    second: tankLArm2
+  - first:
+      1: 100010
+    second: tankLArmCollarbone
+  - first:
+      1: 100012
+    second: tankLArmf1
+  - first:
+      1: 100014
+    second: tankLArmf1 1
+  - first:
+      1: 100016
+    second: tankLArmPalm
+  - first:
+      1: 100018
+    second: tankLCalf
+  - first:
+      1: 100020
+    second: tankLFoot
+  - first:
+      1: 100022
+    second: tankLThigh
+  - first:
+      1: 100024
+    second: tankPelvis
+  - first:
+      1: 100026
+    second: tankRArm1
+  - first:
+      1: 100028
+    second: tankRArm2
+  - first:
+      1: 100030
+    second: tankRArmCollarbone
+  - first:
+      1: 100032
+    second: tankRArmf1
+  - first:
+      1: 100034
+    second: tankRArmf1 1
+  - first:
+      1: 100036
+    second: tankRArmPalm
+  - first:
+      1: 100038
+    second: tankRCalf
+  - first:
+      1: 100040
+    second: tankRFoot
+  - first:
+      1: 100042
+    second: tankRibcage001
+  - first:
+      1: 100044
+    second: tankRThigh
+  - first:
+      1: 100046
+    second: tankSpine
+  - first:
+      4: 400000
+    second: //RootNode
+  - first:
+      4: 400002
+    second: tank mesh
+  - first:
+      4: 400004
+    second: tankhead
+  - first:
+      4: 400006
+    second: tankLArm1
+  - first:
+      4: 400008
+    second: tankLArm2
+  - first:
+      4: 400010
+    second: tankLArmCollarbone
+  - first:
+      4: 400012
+    second: tankLArmf1
+  - first:
+      4: 400014
+    second: tankLArmf1 1
+  - first:
+      4: 400016
+    second: tankLArmPalm
+  - first:
+      4: 400018
+    second: tankLCalf
+  - first:
+      4: 400020
+    second: tankLFoot
+  - first:
+      4: 400022
+    second: tankLThigh
+  - first:
+      4: 400024
+    second: tankPelvis
+  - first:
+      4: 400026
+    second: tankRArm1
+  - first:
+      4: 400028
+    second: tankRArm2
+  - first:
+      4: 400030
+    second: tankRArmCollarbone
+  - first:
+      4: 400032
+    second: tankRArmf1
+  - first:
+      4: 400034
+    second: tankRArmf1 1
+  - first:
+      4: 400036
+    second: tankRArmPalm
+  - first:
+      4: 400038
+    second: tankRCalf
+  - first:
+      4: 400040
+    second: tankRFoot
+  - first:
+      4: 400042
+    second: tankRibcage001
+  - first:
+      4: 400044
+    second: tankRThigh
+  - first:
+      4: 400046
+    second: tankSpine
+  - first:
+      43: 4300000
+    second: tank mesh
+  - first:
+      74: 7400000
+    second: Take 001
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: tank mesh
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 01 - Default
+    second: {fileID: 2100000, guid: 621f7e83f3c6243cb8f85c6eed858015, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
+    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
+    resampleCurves: 1
     optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
     animationCompression: 1
-    animationRotationError: .5
-    animationPositionError: .5
-    animationScaleError: .5
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
     animationWrapMode: 0
     extraExposedTransformPaths: []
+    extraUserProperties: []
     clipAnimations: []
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .00499999989
+    globalScale: 0.005
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 0
     importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
+    keepQuads: 0
     weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 1
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
+    useFileScale: 0
   tangentSpace:
     normalSmoothAngle: 60
-    splitTangentsAcrossUV: 1
     normalImportMode: 0
-    tangentImportMode: 1
+    tangentImportMode: 4
+    normalCalculationMode: 0
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 1
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips:
+  - 0c67f2207ba8a439c837b27a43e23aea
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
+    serializedVersion: 3
     human: []
     skeleton: []
-    armTwist: .5
-    foreArmTwist: .5
-    upperLegTwist: .5
-    legTwist: .5
-    armStretch: .0500000007
-    legStretch: .0500000007
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
     feetSpacing: 0
+    globalScale: 0.005
     rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  additionalBone: 0
   userData: 
+  assetBundleName: 
+  assetBundleVariant: 
